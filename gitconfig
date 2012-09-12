@@ -1,0 +1,11 @@
+[user]
+	name = Martin T. H. Sandsmark
+	email = martin.sandsmark@kde.org
+[color]
+	ui = true
+[url "git://anongit.kde.org/"]
+    insteadOf = kde:
+[url "git@git.kde.org:"]
+    pushInsteadOf = kde:
+[core]
+   excludesfile = ~/.gitexcludes
