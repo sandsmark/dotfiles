@@ -1,6 +1,6 @@
 #!/bin/sh -x
 
-for file in vimrc bashrc gitconfig gitexcludes; do
+for file in vimrc bashrc gitconfig gitexcludes muttrc; do
     rm -f ~/.$file
     ln -s $PWD/$file ~/.$file;
 done
