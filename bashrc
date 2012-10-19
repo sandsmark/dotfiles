@@ -171,5 +171,3 @@ unset   rgb_restore   \
 # key binds
 
 bind '"\C-t": possible-completions' # replaces 'transpose-chars'
-bind '"\C-m": menu-complete'        # replaces 'transpose-words'
-
