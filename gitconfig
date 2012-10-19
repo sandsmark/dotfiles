@@ -9,3 +9,5 @@
     pushInsteadOf = kde:
 [core]
    excludesfile = ~/.gitexcludes
+[merge]
+    tool = vimdiff
