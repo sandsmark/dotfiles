@@ -2,9 +2,10 @@ set header_cache="~/Maildir/mutt-header-cache"
 
 set autoedit
 set from='martin.sandsmark@kde.org'
-alternates "(martin.sandsmark@kde\.org)|(sandsmark@iskrembilen\.com)"
+alternates ^martin.sandsmark@kde\.org$ ^sandsmark@iskrembilen\.com$ ^sandsmark@samfundet\.no$
+set reverse_name=yes
 set realname='Martin Sandsmark'
-set use_from
+set use_from=yes
 set mail_check=30
 set timeout=60
 set imap_keepalive=120
@@ -93,9 +94,6 @@ set status_on_top # få status-linja til toppen
 #set reply_to
 set mark_old=no	# Show old but unread messages
 set menu_scroll=yes     # Ikke hopp hele sider opp og ned i indeksen
-
-# Outlook-brukere beware
-my_hdr X-message-flag: Microsoft Outlook is a refined virus spreading application. It can also send e-mail. Please consider using a more secure e-mail application, for example Mozilla Thunderbird: www.mozilla.org/products/thunderbird/
 
 # endre hvordan folder-index'en ser ut :)
 # http://www.mutt.org/doc/manual/manual-6.html#folder_format

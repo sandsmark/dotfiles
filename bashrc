@@ -93,7 +93,7 @@ function dmsg  { dmesg | p; }
 
 function cd    { builtin cd "$@" && ls; }
 
-function psql  { LD_PRELOAD=/lib/libreadline.so.5 psql; }
+#function psql  { LD_PRELOAD=/lib/libreadline.so.5 psql; }
 
 #############
 # completions
