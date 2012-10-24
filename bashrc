@@ -167,7 +167,3 @@ unset   rgb_restore   \
         rgb_std       \
         rgb_usr
 
-###########
-# key binds
-
-bind '"\C-t": possible-completions' # replaces 'transpose-chars'
