@@ -11,3 +11,5 @@
     excludesfile = ~/.gitexcludes
 [merge]
     tool = vimdiff
+[push]
+	default = simple
