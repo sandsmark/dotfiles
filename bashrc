@@ -33,6 +33,8 @@ declare -x DEITY=seigo
 
 declare -x BROWSER=chromium
 
+declare -x KF5=~/kf5
+
 unset PROMPT_COMMAND
 
 #################
