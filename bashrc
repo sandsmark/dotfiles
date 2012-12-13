@@ -23,9 +23,10 @@ declare -x EDITOR='vim'
 declare -x VISUAL="${EDITOR}"
 declare -x FCEDIT="${EDITOR}"
 
+declare -x PROMPTCOMMAND="history -n; history -a" # sync history
+
 declare -x HISTFILE=~/.bash_history
-declare -x HISTCONTROL=ignoreboth
-declare -x hISTFILESIZE=50000
+declare -x HISTCONTROL=ignorespace # only ignore commands that start with a space
 declare -x HISTSIZE=500000
 
 declare -x MPD_HOST=itk-musikk.samfundet.no
@@ -34,8 +35,6 @@ declare -x DEITY=seigo
 declare -x BROWSER=chromium
 
 declare -x KF5=~/kf5
-
-unset PROMPT_COMMAND
 
 #################
 # shell variables
@@ -51,6 +50,7 @@ shopt -s lithist
 shopt -s progcomp
 shopt -s checkhash
 shopt -s histreedit
+shopt -s histappend
 shopt -s promptvars
 shopt -s cdable_vars
 shopt -s checkwinsize

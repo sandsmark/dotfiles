@@ -32,7 +32,6 @@ set hidden			" lukker ikke ei fil i et buffer når du forlater den ("abandon")
 set hlsearch			" highlighter siste søk, kjekt....
 "set incsearch			" noen syntes dette er nice, jeg synes ikke det :P
 set nocompatible		" Use Vim defaults (much better!)
-set noexpandtab
 set nowrap			" vi liker da ikke wrap'ing... bare dritt
 set number			" for å få linjenumrering... litt slitsomt i starten
 set nowarn
