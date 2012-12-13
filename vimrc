@@ -82,9 +82,8 @@ inoremap <xF1> <nop>
 
 " Set a satusline that gives some cool information.
 set statusline=%<%F%h%m%r%=\[%B\]\ %l,%c%V\ %P
-"set statusline=%3*[%1*%02n%3*]%*\ %1*%F%*\ %2*%(%4*%m%2*%r%h%w%y%)%*\ %=%3*[%1*%{strftime(\"%Y-%m-%d\ %H:%M\")}%3*]%*\ %15(%3*<%1*%c%V,%l%3*/%1*%L%3*>%)%*
-" We only want the statusline when we have more than one window.
-set laststatus=1
+" Always show the statusline
+set laststatus=2
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
