@@ -148,7 +148,12 @@ else
     rgb_usr="${rgb_green}"
 fi
 
-[ -n "$PS1" ] && PS1="${rgb_gray}`hostname`${rgb_usr}: ${rgb_std}\w/${rgb_restore} "
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+
+[ -n "$PS1" ] && PS1="${rgb_gray}`hostname`${rgb_usr}: ${rgb_std}\w/${rgb_cadet}\$(parse_git_branch)${rgb_restore} "
 
 unset   rgb_restore   \
         rgb_black     \
