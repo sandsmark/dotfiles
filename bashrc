@@ -148,7 +148,7 @@ else
     rgb_usr="${rgb_green}"
 fi
 
-[ -n "$PS1" ] && PS1="${rgb_gray}`hostname`${rgb_usr}:${rgb_std}\w/${rgb_restore} "
+[ -n "$PS1" ] && PS1="${rgb_gray}`hostname`${rgb_usr}: ${rgb_std}\w/${rgb_restore} "
 
 unset   rgb_restore   \
         rgb_black     \
