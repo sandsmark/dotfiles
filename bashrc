@@ -66,6 +66,7 @@ alias ls='ls --color=auto'
 alias l=ls
 alias ll='ls -l'
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
+alias pacman=pacman-color
 
 ###########
 # functions
