@@ -96,6 +96,14 @@ function dmsg  { dmesg | p; }
 
 function cd    { builtin cd "$@" && ls; }
 
+function vim    {
+    if [[ "$@" =~ (.*):([0-9]+) ]]; then
+        /usr/bin/vim +"${BASH_REMATCH[2]}" "${BASH_REMATCH[1]}"
+    else
+        /usr/bin/vim "$@"
+    fi
+}
+
 #function psql  { LD_PRELOAD=/lib/libreadline.so.5 psql; }
 
 #############
