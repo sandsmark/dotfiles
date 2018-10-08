@@ -61,10 +61,12 @@ shopt -s interactive_comments
 
 alias vi=vim
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 alias l=ls
 alias ll='ls -l'
+alias feh='feh -.'
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
-alias pacman=pacman-color
+alias ix="curl -n -F 'f:1=<-' http://ix.io"
 
 ###########
 # functions
@@ -88,11 +90,21 @@ function ..    { cd ..; }
 function ll    { ls --color=auto -FAql $@; }
 function lf    { ls --color=auto -FAq  $@; }
 
+function make    { ionice nice make $@; }
+
+function find  { stderred find "$@"; }
 function ff    { find . -name $@; }
 
 function dmsg  { dmesg | p; }
 
 function cd    { builtin cd "$@" && ls; }
+
+function mkcd    { mkdir "$@" && builtin cd "$@"; }
+
+function h2d    { echo "ibase=16; $@"|bc; }
+function h2b    { echo "ibase=16;obase=2; $(echo $@ | tr [:lower:] [:upper:])" |bc; }
+function b2h    { echo "ibase=2;obase=16; $@"|bc; }
+function d2h    { echo "obase=16; $@"|bc; }
 
 function vim    {
     if [[ "$@" =~ (.*):([0-9]+) ]]; then
