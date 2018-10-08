@@ -1,73 +1,51 @@
-set header_cache="~/Maildir/mutt-header-cache"
-
-set autoedit
-set from='martin.sandsmark@kde.org'
-alternates ^martin.sandsmark@kde\.org$ ^sandsmark@iskrembilen\.com$ ^sandsmark@samfundet\.no$
-set reverse_name=yes
+set from='martin.sandsmark@remarkable.no'
 set realname='Martin Sandsmark'
-set use_from=yes
-set mail_check=30
-set timeout=60
-set imap_keepalive=120
-set imap_passive=no
+alternates ^martin.sandsmark@remarkable\.com$ ^martin@magmacompany\.com$
+set reverse_name=yes
 
-# instant faster mutt
-set sleep_time=0
+
+set mail_check=5
+set timeout=60
+set mbox_type=Maildir
+set folder="~/Mail"
+set spoolfile="+INBOX"
+set record="+sent"
+set postponed="+drafts"
+set header_cache="~/Mail/mutt-header-cache"
+source ~/.mutt/mailboxes
+
+set sendmail="/usr/bin/msmtp"
 
 # Maildir!
-set mbox_type=Maildir
-set folder="~/Maildir"
-set spoolfile="~/Maildir"
-set mask="^\\.[^.]"
-set record="+Sent"
-set postponed="+Drafts"
 
-# Magic for automagic mailboxes
-mailboxes `\
-for file in ~/Maildir/.*; do \
-	box=$(basename $file); \
-	if [ ! $box = '.' -a ! $box = '..' -a ! $box = '.customflags' -a ! $box = '.subscriptions' -a ! $box = '.INBOX' ]; then \
-		echo -n "~/Maildir/$box "; \
-	fi; \
-done`
-
-# Sane macros for maildir-usage
-#macro index c "<change-folder>?<toggle-mailboxes>" "open a different folder"
-#macro pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
-
-# Sane macros for maildir-usage
-#macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
-#macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 macro index <Esc>M "T~N<enter>;WNT~O<enter>;WO\CT~A<enter>" "mark all messages read"
 
 ignore *
+
+# Headers
+set autoedit
+set use_from=yes
+unignore User-Agent
+unignore X-Mailer
+unignore X-MimeOLE
+unignore X-Spam-Score
+unignore X-Spam-Report
+unignore Resent*
 
 unignore From
 color header green black "From: "
 unignore Reply-To
 color header green black "From: "
-unignore User-Agent
-unignore X-Mailer
-unignore X-MimeOLE
-
-unignore Resent*
-
 unignore To
 color header red black "To: "
-
 unignore Cc
-unignore Bcc
 color header red black "Cc: "
+unignore Bcc
 color header red black "Bc: "
-
 unignore Subject
 color header yellow black "Subject: "
-
 unignore Date
 color header magenta black "Date: "
-
-unignore X-Spam-Score
-unignore X-Spam-Report
 
 # Ikke spør
 set move=no
@@ -84,15 +62,14 @@ set edit_hdrs           # la meg få kontroll over headerene
 set abort_unmodified    # drit i meldinger jeg ikke har lagret
 set bounce_delivered=no # Fjern Delivered-To: header ved bouncing
 set pager_index_lines=6 # splitscreen mutt!! ;)
-set pager_stop=yes   # hopp til neste melding når du browser ferdig en gammel
-set arrow_cursor=no  # bruk hele linjen som meny markør
+set pager_stop=yes      # hopp til neste melding når du browser ferdig en gammel
+set arrow_cursor=no     # bruk hele linjen som meny markør
 set check_new=yes       # sjekk for nye meldinger i maildir og MH-style bokser.
-set forward_quote=no # quote forwardinger?
-set help=no	# slår av/på hjelp-headeren 
+set forward_quote=no    # quote forwardinger?
+set help=no	            # slår av/på hjelp-headeren 
 set indent_string="> "  # endre denne, og bli flamet til døde :)
-set status_on_top # få status-linja til toppen
-#set reply_to
-set mark_old=no	# Show old but unread messages
+set status_on_top       # få status-linja til toppen
+set mark_old=no	        # Show old but unread messages
 set menu_scroll=yes     # Ikke hopp hele sider opp og ned i indeksen
 
 # endre hvordan folder-index'en ser ut :)
@@ -100,10 +77,19 @@ set menu_scroll=yes     # Ikke hopp hele sider opp og ned i indeksen
 set folder_format="%t%N  %2C %-30f %8s %d "
 # hvordan linjene i meldings-index'en skal se ut.
 set hdr_format="%4C %Z %{%b %d} %-15.15n (%4l) %s"
+color normal    white black
+color attachment brightyellow black
+color hdrdefault cyan black
+color indicator black cyan
+color markers   brightred black
+color quoted    green black
+color signature cyan black
+color status    brightgreen blue
+color tilde blue black
+color tree  red black
 # hvordan bunn-linja skal se ut når du leser mail
 set pager_format="%S [%T] %n / %s"
 # hvordan status-linjen i index-menyen skal se ut
-#set status_format="-%r- %f %?n?[ New:%n ]?----%>-(%P)---" 
 set status_format = "-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---"
 
 # default sortering
@@ -111,7 +97,7 @@ set sort=threads
 set sort_aux=last-date-received
 
 # farger på smileys, kult at den takler regexp også :)
-#color body      black       yellow "[;:=]-?[)/(|]"
+color body      black       yellow " [;:=]-?[)/(|]"
 
 # farger i index'en
 color index     yellow       black ~N      # Ny 
@@ -128,6 +114,8 @@ bind pager  ,\t      previous-unread
 
 set read_inc=1000 # Speed up opening of large mboxes
 set write_inc=1000
+
+set sleep_time=0    # instant faster mutt
 
 set charset=utf-8
 set send_charset=utf-8
