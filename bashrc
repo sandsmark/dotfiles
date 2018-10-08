@@ -162,7 +162,13 @@ function parse_git_branch {
 }
 
 
-[ -n "$PS1" ] && PS1="${rgb_gray}`hostname`${rgb_usr}: ${rgb_std}\w/${rgb_cadet}\$(parse_git_branch)${rgb_restore} "
+export ELIDED_PATH='$(echo -n "${PWD/#$HOME/\~}" | awk -F "/" '"'"'{
+if (length($0) > 50) { if (NF>4) print $1 "/" $2 "/.../" $(NF-1) "/" $NF;
+else if (NF>3) print $1 "/" $2 "/.../" $NF;
+else print $1 "/.../" $NF; }
+else print $0;}'"'"')'
+
+PS1="${rgb_gray}`hostname`${rgb_usr}: ${rgb_std}${ELIDED_PATH}/${rgb_cadet}\$(parse_git_branch)${rgb_restore} "
 
 unset   rgb_restore   \
         rgb_black     \
