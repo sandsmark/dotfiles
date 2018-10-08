@@ -27,11 +27,8 @@ declare -x FCEDIT="${EDITOR}"
 declare -x PROMPT_COMMAND="history -a" # sync history immediately
 
 declare -x HISTFILE=~/.bash_history
-declare -x HISTCONTROL=ignorespace # only ignore commands that start with a space
-declare -x HISTSIZE=500000
-
-declare -x MPD_HOST=itk-musikk.samfundet.no
-declare -x DEITY=seigo
+export HISTCONTROL=ignoreboth:erasedups
+declare -x HISTSIZE=-1
 
 declare -x BROWSER=chromium
 
