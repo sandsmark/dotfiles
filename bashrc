@@ -24,7 +24,7 @@ declare -x TERM='xterm-256color'
 declare -x VISUAL="${EDITOR}"
 declare -x FCEDIT="${EDITOR}"
 
-declare -x PROMPTCOMMAND="history -n; history -a" # sync history
+declare -x PROMPT_COMMAND="history -a" # sync history immediately
 
 declare -x HISTFILE=~/.bash_history
 declare -x HISTCONTROL=ignorespace # only ignore commands that start with a space
