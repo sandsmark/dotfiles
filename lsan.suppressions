@@ -1,0 +1,4 @@
+leak:libdbus
+leak:libfontconfig
+leak:QAccessibleObject
+leak:QAccessibleWidget
