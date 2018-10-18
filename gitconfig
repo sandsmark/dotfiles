@@ -21,4 +21,4 @@
     tool = vimdiff
     ff = only
 [push]
-	default = simple
+	default = tracking
