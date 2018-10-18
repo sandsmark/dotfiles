@@ -63,7 +63,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set timeout			" allow keys to timeout
-set timeoutlen=3000		" timeout after 3s
+set ttimeoutlen=100		" Timeout of successive keys from keyboard driver
 set novisualbell			" sørge for at vi bare får flash ihverfall
 "set viminfo='20,\"50		" read/write a .viminfo file -- limit to only 50
 set wildmode=list:longest	"(file-listing when opening a new file)
