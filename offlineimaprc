@@ -1,0 +1,61 @@
+[general]
+accounts = main
+maxsyncaccounts = 1
+
+
+# gmail is the only server I use which has a broken and slow IMAP implementation
+[Account main]
+localrepository = main-local
+remoterepository = main-remote
+autorefresh = 0.5
+quick = 10
+
+
+# Local maildir folder
+[Repository main-local]
+type = Maildir
+localfolders = ~/Mail
+sep = .
+restoreatime = no
+maxconnections = 5
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
+nametrans = lambda folder: re.sub('spam', '[Gmail].Spam',
+                           re.sub('drafts', '[Gmail].Drafts',
+                           re.sub('sent', '[Gmail].Sent Mail',
+                           re.sub('starred', '[Gmail].Starred',
+                           re.sub('trash', '[Gmail].Trash',
+                           re.sub('important', '[Gmail].Important',
+                           re.sub('archive', '[Gmail].All Mail',
+                           re.sub('_', ' ', folder)))))))))
+
+
+# The remote server with the slow and broken IMAP
+[Repository main-remote]
+type = Gmail
+keepalive = 60
+holdconnectionopen = yes
+ssl_version = tls1_2
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+realdelete = no
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
+nametrans = lambda folder: re.sub(' ', '_',
+                           re.sub('.*Spam$', 'spam',
+                           re.sub('.*Drafts$', 'drafts',
+                           re.sub('.*Sent Mail$', 'sent',
+                           re.sub('.*Starred$', 'starred',
+                           re.sub('.*Trash$', 'trash',
+                           re.sub('.*Important$', 'important', folder)))))))))
+
+## For testing
+#readonly = true
+
+
+# Tell mutt about the folders we have
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "%(foldername)s"
+sep = " "
+footer = "\n"
+

@@ -1,6 +1,6 @@
 #!/bin/sh -xe
 
-for file in vimrc bashrc gitconfig gitexcludes muttrc bcrc lsan.suppressions; do
+for file in vimrc bashrc gitconfig gitexcludes muttrc bcrc lsan.suppressions offlineimaprc; do
     rm -f ~/.$file
     ln -s $PWD/$file ~/.$file;
 done
