@@ -39,6 +39,8 @@ declare -x MALLOC_CHECK_=1
 
 declare -x BC_ENV_ARGS=~/.bcrc
 
+declare -x WINEARCH="win32"
+
 #################
 # shell variables
 
