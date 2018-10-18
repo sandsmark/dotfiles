@@ -31,3 +31,5 @@
     autoupdate = true
 [rebase]
     stat = true
+[alias]
+    wdiff = diff --color-words
