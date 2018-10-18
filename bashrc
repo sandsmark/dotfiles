@@ -118,24 +118,7 @@ function vim    {
 #############
 # completions
 
-complete -A setopt set
-complete -A user groups id
-complete -A binding bind
-complete -A helptopic help
-complete -A alias {,un}alias
-complete -A signal -P '-' kill
-complete -A stopped -P '%' fg bg
-complete -A job -P '%' jobs disown
-complete -A variable readonly unset
-complete -A file -A directory ln chmod
-complete -A user -A hostname finger pinky
-complete -A directory find cd pushd {mk,rm}dir
-complete -A file -A directory -A user chown
-complete -A file -A directory -A group chgrp
-complete -o default -W 'Makefile' -P '-o ' qmake
-complete -A command man which whatis whereis sudo info apropos
-complete -A file {,z}cat pico nano vi {,{,r}g,e,r}vi{m,ew} vimdiff elvis emacs {,r}ed e{,x} joe jstar jmacs rjoe jpico {,z}less {,z}more p{,g}
-complete -W "$(echo $(grep '^ssh ' ${HISTFILE} | sort -u | sed 's/^ssh //'))" ssh
+complete -W '$(echo $(cut -d\  -f1 < ~/.ssh/known_hosts | cut -d, -f1))' mosh
 
 ########
 # prompt
