@@ -7,6 +7,7 @@ done
 
 mkdir -p ~/.vim/tmp/
 for file in linuxsty.vim qml.vim; do
+    rm -f ~/.vim/plugin/$file;
     ln -s $PWD/$file ~/.vim/plugin/$file;
 done
 
