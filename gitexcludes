@@ -68,3 +68,6 @@ Thumbs.db
 *-swp
 *.swp
 /build
+CMakeLists.txt.user
+.kdev_include_paths
+moc_*.cpp
