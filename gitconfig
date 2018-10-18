@@ -29,3 +29,5 @@
 [rerere]
     enabled = true
     autoupdate = true
+[rebase]
+    stat = true
