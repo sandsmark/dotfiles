@@ -19,5 +19,6 @@
     autocrlf = false
 [merge]
     tool = vimdiff
+    ff = only
 [push]
 	default = simple
