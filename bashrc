@@ -115,8 +115,6 @@ function vim    {
     fi
 }
 
-#function psql  { LD_PRELOAD=/lib/libreadline.so.5 psql; }
-
 #############
 # completions
 
