@@ -1,4 +1,4 @@
-#!/bin/sh -x
+#!/bin/sh -xe
 
 for file in vimrc bashrc gitconfig gitexcludes muttrc bcrc lsan.suppressions; do
     rm -f ~/.$file
