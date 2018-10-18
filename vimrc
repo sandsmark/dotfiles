@@ -109,6 +109,11 @@ set termencoding=utf-8
 au BufNewFile,BufRead mutt*    set tw=77 ai nocindent fileencoding=utf-8
 au BufNewFile,BufRead psql.edit.*    set tw=77 ai nocindent fileencoding=utf-8 filetype=sql
 
+
+" Because I type this wrong all the time
+:command Q q
+
+
 " Highlight bogus whitespace at the end of files
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
