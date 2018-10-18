@@ -53,8 +53,6 @@ declare -x QT_QPA_PLATFORMTHEME=sandsmark
 
 declare -x LSAN_OPTIONS=suppressions=~/.lsan.suppressions
 
-declare -x KDE_SESSION_VERSION=4
-
 
 #################
 # shell variables
