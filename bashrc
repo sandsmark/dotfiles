@@ -27,12 +27,13 @@ declare -x FCEDIT="${EDITOR}"
 declare -x PROMPT_COMMAND="history -a" # sync history immediately
 
 declare -x HISTFILE=~/.bash_history
-export HISTCONTROL=ignoreboth:erasedups
+declare -x HISTCONTROL=ignoreboth:erasedups
 declare -x HISTSIZE=-1
 
 declare -x BROWSER=chromium
 
-declare -x KF5=~/kf5
+declare -x CCACHE_PATH="/usr/bin"
+declare -x CGCC_FORCE_COLOR=True
 
 #################
 # shell variables
