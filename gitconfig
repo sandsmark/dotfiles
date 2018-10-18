@@ -16,6 +16,7 @@
     pushInsteadOf = kde:
 [core]
     excludesfile = ~/.gitexcludes
+    autocrlf = false
 [merge]
     tool = vimdiff
 [push]
