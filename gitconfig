@@ -26,3 +26,6 @@
     algorithm = histogram
     compactionHeuristic = true
     noprefix = true
+[rerere]
+    enabled = true
+    autoupdate = true
