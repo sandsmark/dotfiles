@@ -47,6 +47,8 @@ declare -x QTC_HELPVIEWER_BACKEND=textbrowser
 
 declare -x QT_AUTO_SCREEN_SCALE_FACTOR=0
 
+declare -x QTKEYCHAIN_BACKEND=kwallet5
+
 #################
 # shell variables
 
