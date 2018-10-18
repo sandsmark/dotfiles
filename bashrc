@@ -33,7 +33,7 @@ declare -x HISTSIZE=-1
 declare -x BROWSER=chromium
 
 declare -x CCACHE_PATH="/usr/bin"
-declare -x CGCC_FORCE_COLOR=True
+declare -x GCC_COLORS=auto
 
 declare -x MALLOC_CHECK_=1
 
