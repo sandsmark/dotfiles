@@ -25,3 +25,4 @@
 [diff]
     algorithm = histogram
     compactionHeuristic = true
+    noprefix = true
