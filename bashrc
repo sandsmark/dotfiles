@@ -43,6 +43,8 @@ declare -x WINEARCH="win32"
 
 declare -x QT_NO_GLIB=1
 
+declare -x QTC_HELPVIEWER_BACKEND=textbrowser
+
 #################
 # shell variables
 
