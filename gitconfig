@@ -22,3 +22,6 @@
     ff = only
 [push]
 	default = tracking
+[diff]
+    algorithm = histogram
+    compactionHeuristic = true
