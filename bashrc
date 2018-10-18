@@ -41,6 +41,8 @@ declare -x BC_ENV_ARGS=~/.bcrc
 
 declare -x WINEARCH="win32"
 
+declare -x QT_NO_GLIB=1
+
 #################
 # shell variables
 
