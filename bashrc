@@ -37,6 +37,8 @@ declare -x CGCC_FORCE_COLOR=True
 
 declare -x MALLOC_CHECK_=1
 
+declare -x BC_ENV_ARGS=~/.bcrc
+
 #################
 # shell variables
 
