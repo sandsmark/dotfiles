@@ -1,3 +1,7 @@
+" Random vim config collected and handed over through the years at the Student
+" Society in Trondheim
+" Now mine.
+
 filetype plugin indent on
 syntax on
 
@@ -7,6 +11,12 @@ let vimdir=$HOME . '/.vim/'
 " Store all backup files in a central folder instead of cluttering
 let &viminfo="'20," . '%,n' . vimdir . 'viminfo'
 let &backupdir=vimdir . 'tmp'
+
+
+if !isdirectory(&backupdir)
+    call mkdir(&backupdir, "p")
+endif
+
 
 " If we have a saved position in the file, go there.
 autocmd BufReadPost *
