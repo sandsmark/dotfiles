@@ -125,5 +125,5 @@ set charset=utf-8
 set send_charset=utf-8
 
 alternative_order text/plain text/html text/enriched
-auto_view text/html
+auto_view text/html application/pdf
 
