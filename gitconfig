@@ -3,6 +3,13 @@
     email = martin.sandsmark@kde.org
 [color]
     ui = true
+    branch = always
+    diff = true
+    interactive = always
+    grep = true
+    pager = true
+    decorate = always
+    showbranch = always
 [url "git://anongit.kde.org/"]
     insteadOf = kde:
 [url "git@git.kde.org:"]
