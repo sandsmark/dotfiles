@@ -81,8 +81,8 @@ let spell_language_list = "norsk,english"
 let Tlist_Ctags_Cmd=$HOME . '/local/' . tolower(substitute(osys,"\n",'','')) . '/bin/ctags'
 
 " F1 for help is really annoying.
-nnoremap <xF1> <nop>
-inoremap <xF1> <nop>
+:nmap <F1> :echo<CR>
+:imap <F1> <C-o>:echo<CR>
 
 "" Change directory to the directory of the file I'm working on.
 "autocmd BufEnter * 
