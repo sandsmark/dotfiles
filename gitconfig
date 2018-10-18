@@ -10,6 +10,8 @@
     pager = true
     decorate = always
     showbranch = always
+[url "git@github.com:sandsmark/"]
+    insteadOf = github:
 [url "git://anongit.kde.org/"]
     insteadOf = kde:
 [url "git@git.kde.org:"]
