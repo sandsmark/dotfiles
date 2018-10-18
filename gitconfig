@@ -33,3 +33,5 @@
     stat = true
 [alias]
     wdiff = diff --color-words
+[http]
+    cookiefile = ~/.gitcookies
