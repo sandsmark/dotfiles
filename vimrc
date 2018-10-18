@@ -50,6 +50,7 @@ set suffixes+=.class,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,
 set showcmd
 set showmatch			" vise fold'a kode eller noe... ???
 set smartcase			" lurt når man driver å søker...
+set ignorecase          " ignore case by default when searching
 set shortmess=at		"shortens messages to avoid 'press a key' prompt 
 set shiftwidth=2		" two spaces per sw
 set diffopt+=iwhite     " ignore trailing whitespace in vimdiff
