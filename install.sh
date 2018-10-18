@@ -6,6 +6,9 @@ for file in vimrc bashrc gitconfig gitexcludes muttrc bcrc lsan.suppressions; do
 done
 
 mkdir -p ~/.vim/tmp/
+for file in linuxsty.vim; do
+    ln -s $PWD/$file ~/.vim/plugin/$file;
+done
 
 touch ~/.bash_history
 
