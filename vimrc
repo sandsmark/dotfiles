@@ -117,3 +117,7 @@ au BufNewFile,BufRead psql.edit.*    set tw=77 ai nocindent fileencoding=utf-8 f
 " Highlight bogus whitespace at the end of files
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
+
+" Make spelling errors readable
+highlight SpellBad ctermbg=0 ctermfg=1
+
