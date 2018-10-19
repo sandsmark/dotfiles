@@ -26,7 +26,7 @@ nametrans = lambda folder: re.sub('spam', '[Gmail].Spam',
                            re.sub('trash', '[Gmail].Trash',
                            re.sub('important', '[Gmail].Important',
                            re.sub('archive', '[Gmail].All Mail',
-                           re.sub('_', ' ', folder)))))))))
+                           re.sub('_', ' ', folder))))))))
 
 
 # The remote server with the slow and broken IMAP
@@ -44,7 +44,7 @@ nametrans = lambda folder: re.sub(' ', '_',
                            re.sub('.*Sent Mail$', 'sent',
                            re.sub('.*Starred$', 'starred',
                            re.sub('.*Trash$', 'trash',
-                           re.sub('.*Important$', 'important', folder)))))))))
+                           re.sub('.*Important$', 'important', folder)))))))
 
 ## For testing
 #readonly = true
