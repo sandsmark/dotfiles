@@ -51,7 +51,7 @@ declare -x QTKEYCHAIN_BACKEND=kwallet5
 
 declare -x QT_QPA_PLATFORMTHEME=sandsmark
 
-declare -x LSAN_OPTIONS=suppressions=~/.lsan.suppressions
+declare -x LSAN_OPTIONS=suppressions=${HOME}/.lsan.suppressions
 
 
 #################
