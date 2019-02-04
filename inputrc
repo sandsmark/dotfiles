@@ -6,7 +6,7 @@ set mark-symlinked-directories On
 set show-all-if-ambiguous On
 set visible-stats On
 
-Control-w: backward-kill-word
+Control-w: unix-filename-rubout
 #Control-n: dump-functions
 #Meta-Rubout: unix-word-rubout
 
