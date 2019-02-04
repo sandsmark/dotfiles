@@ -53,6 +53,9 @@ declare -x QT_QPA_PLATFORMTHEME=sandsmark
 
 declare -x LSAN_OPTIONS=suppressions=${HOME}/.lsan.suppressions
 
+declare -x LIBVA_DRIVER_NAME=iHD
+declare -x VDPAU_DRIVER=va_gl
+
 
 #################
 # shell variables
