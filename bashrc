@@ -126,6 +126,20 @@ function h2b    { echo "ibase=16;obase=2; $(echo $@ | tr [:lower:] [:upper:])" |
 function b2h    { echo "ibase=2;obase=16; $@"|bc; }
 function d2h    { echo "obase=16; $@"|bc; }
 
+function mac-vendor {
+    MAC="$(echo $@ | sed 's/ //g' | sed 's/-//g' | sed 's/://g' | cut -c1-6)";
+
+    result="$(grep -i -A 4 ^$MAC ~/oui.txt)";
+
+    if [ "$result" ]; then
+        echo "For the MAC $1 the following information is found:"
+        echo "$result"
+    else
+        echo "MAC $1 is not found in the database."
+    fi
+
+}
+
 function vim    {
     if [[ "$@" =~ (.*):([0-9]+) ]]; then
         /usr/bin/vim +"${BASH_REMATCH[2]}" "${BASH_REMATCH[1]}"
