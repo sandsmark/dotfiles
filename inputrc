@@ -15,6 +15,7 @@ set input-meta on
 set convert-meta off
 set output-meta on
 set enable-bracketed-paste on
+set blink-matching-paren on
 
 $if mode=emacs
 
