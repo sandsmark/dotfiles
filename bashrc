@@ -24,7 +24,7 @@ declare -x TERM='xterm-256color'
 declare -x VISUAL="${EDITOR}"
 declare -x FCEDIT="${EDITOR}"
 
-declare -x PROMPT_COMMAND="history -a" # sync history immediately
+declare -x PROMPT_COMMAND='ret=$?; if [ $ret -ne 0 ] ; then echo -e "returned \033[01;31m$ret\033[00;00m"; fi; history -a'
 
 declare -x HISTFILE=~/.bash_history
 declare -x HISTCONTROL=ignoreboth:erasedups
