@@ -86,6 +86,9 @@ let Tlist_Ctags_Cmd=$HOME . '/local/' . tolower(substitute(osys,"\n",'','')) . '
 
 :nmap q :echo<CR>
 
+" Misstyping ; is annoying
+:nnoremap ; :
+
 "" Change directory to the directory of the file I'm working on.
 "autocmd BufEnter * 
 "	    \ if isdirectory( '%:p:h' ) |
