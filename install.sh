@@ -5,6 +5,12 @@ for file in vimrc bashrc gitconfig gitexcludes muttrc bcrc lsan.suppressions off
     ln -s $PWD/$file ~/.$file;
 done
 
+mkdir -p ~/.config/
+for file in compton.conf; do
+    rm -f ~/.$file
+    ln -s $PWD/$file ~/config/.$file;
+done
+
 mkdir -p ~/.vim/tmp/
 for file in linuxsty.vim qml.vim; do
     rm -f ~/.vim/plugin/$file;
