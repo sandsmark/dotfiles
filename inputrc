@@ -20,6 +20,7 @@ set colored-completion-prefix on
 set skip-completed-text on
 set completion-ignore-case on
 set completion-map-case on
+set match-hidden-files on
 
 # for linux console and RH/Debian xterm
 "\e[1~": beginning-of-line
