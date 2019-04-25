@@ -120,6 +120,8 @@ function dmsg  { dmesg | p; }
 function cd    { builtin cd "$@" && ls; }
 
 function mkcd    { mkdir "$@" && builtin cd "$@"; }
+function fix-whiteboard { convert "$@" -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 "$@.fixed.jpg"; }
+
 
 function h2d    { echo "ibase=16; $@"|bc; }
 function h2b    { echo "ibase=16;obase=2; $(echo $@ | tr [:lower:] [:upper:])" |bc; }
