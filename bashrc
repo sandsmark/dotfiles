@@ -83,7 +83,7 @@ shopt -s interactive_comments
 # aliases
 
 alias vi=vim
-alias ls='ls --color=auto'
+alias ls='ls -C -h --color=auto'
 alias grep='grep --color=auto'
 alias l=ls
 alias ll='ls -l'
