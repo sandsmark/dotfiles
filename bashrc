@@ -56,6 +56,11 @@ declare -x LSAN_OPTIONS=suppressions=${HOME}/.lsan.suppressions
 declare -x LIBVA_DRIVER_NAME=iHD
 declare -x VDPAU_DRIVER=va_gl
 
+# Java is retarded
+declare -x _JAVA_AWT_WM_NONREPARENTING=1
+# Gradle is retarded
+declare -x GRADLE_OPTS=-Dorg.gradle.daemon=false
+
 
 #################
 # shell variables
