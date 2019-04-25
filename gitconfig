@@ -28,6 +28,8 @@
     algorithm = histogram
     compactionHeuristic = true
     noprefix = true
+[format-patch]
+    noprefix = false
 [rerere]
     enabled = true
     autoupdate = true
