@@ -12,7 +12,7 @@ umask 022
 ###############
 # env variables
 
-declare -x PATH="/usr/local/bin/:~/go/bin/:$PATH"
+declare -x PATH="/usr/local/bin/:$PATH"
 
 declare -x LS_COLORS='no=01;37:fi=01;37:di=01;34:ln=01;36:pi=01;32:so=01;35:do=01;35:bd=01;33:cd=01;33:ex=01;31:mi=00;37:or=00;36:'
 
