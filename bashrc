@@ -85,8 +85,6 @@ shopt -s interactive_comments
 alias vi=vim
 alias ls='ls -C -h --color=auto'
 alias grep='grep --color=auto'
-alias l=ls
-alias ll='ls -l'
 alias feh='feh -.'
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 alias ix="curl -n -F 'f:1=<-' http://ix.io"
@@ -110,8 +108,8 @@ function cx    { hc;x; }
 
 function ..    { cd ..; }
 
-function ll    { ls --color=auto -FAql $@; }
-function lf    { ls --color=auto -FAq  $@; }
+function l    { ls --group-directories-first --color=auto -Fq  $@; }
+function ll    { ls --group-directories-first --color=auto -Fql $@; }
 
 function make    { ionice nice make $@; }
 
