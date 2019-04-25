@@ -19,8 +19,6 @@ set blink-matching-paren on
 set colored-completion-prefix on
 set skip-completed-text on
 
-$if mode=emacs
-
 # for linux console and RH/Debian xterm
 "\e[1~": beginning-of-line
 "\e[4~": end-of-line
@@ -46,5 +44,4 @@ $if mode=emacs
 # for freebsd console
 "\e[H": beginning-of-line
 "\e[F": end-of-line
-$endif
 
