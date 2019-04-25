@@ -101,7 +101,6 @@ function e     { ${EDITOR} $@; }
 
 function c     { clear; }
 function h     { history $@; }
-function hc    { history -c; }
 function hcc   { hc;c; }
 
 function cx    { hc;x; }
