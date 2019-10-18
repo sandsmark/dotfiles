@@ -12,7 +12,10 @@ umask 022
 ###############
 # env variables
 
-declare -x PATH="/usr/local/bin/:$PATH"
+# Path is special, because some scripts in /etc/profile.d/ likes to add stuff several times
+# So don't care if we add something already there here, and just remove duplicates afterwards
+declare -x PATH="/usr/local/bin:/usr/lib/ccache/bin/:$PATH"
+PATH="$(perl -e 'print join(":", grep { not $seen{$_}++ } split(/:/, $ENV{PATH}))')"
 
 declare -x LS_COLORS='no=01;37:fi=01;37:di=01;34:ln=01;36:pi=01;32:so=01;35:do=01;35:bd=01;33:cd=01;33:ex=01;31:mi=00;37:or=00;36:'
 
