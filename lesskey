@@ -1,2 +1,2 @@
 #env
-LESS = -R -F -X -j.5 -J -i
+LESS = --RAW-CONTROL-CHARS --quit-if-one-screen --no-init --jump-target=.5 --status-column --ignore-case --LONG-PROMPT --quit-on-intr --no-histdups --mouse
