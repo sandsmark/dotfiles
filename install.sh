@@ -23,3 +23,5 @@ done
 
 touch ~/.bash_history
 
+# Update ~/.less from ~/.lesskey
+lesskey
