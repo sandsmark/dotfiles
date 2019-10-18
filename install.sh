@@ -5,6 +5,10 @@ for file in vimrc bashrc gitconfig gitexcludes muttrc bcrc lsan.suppressions off
     ln -s $PWD/$file ~/.$file;
 done
 
+mkdir -p ~/.ccache/
+rm -f ~/.ccache/ccache.conf
+ln -s $PWD/ccache.conf ~/.ccache/ccache.conf
+
 mkdir -p ~/.config/
 for file in compton.conf; do
     rm -f ~/.$file
