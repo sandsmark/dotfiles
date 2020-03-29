@@ -131,7 +131,7 @@ function ff    { find . -name $@; }
 
 function dmsg  { dmesg | p; }
 
-function cd    { builtin cd "$@" && ls; }
+function cd    { builtin cd "$@" && if [ "$(/usr/bin/ls -U1q | wc -l)" -lt 250 ]; then ls; fi; }
 
 function mkcd    { mkdir "$@" && builtin cd "$@"; }
 function fix-whiteboard { convert "$@" -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 "$@.fixed.jpg"; }
