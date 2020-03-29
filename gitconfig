@@ -1,6 +1,3 @@
-[user]
-    name = Martin T. H. Sandsmark
-    email = martin.sandsmark@kde.org
 [color]
     ui = true
     branch = always
@@ -10,24 +7,23 @@
     pager = true
     decorate = always
     showbranch = always
-[url "git@github.com:sandsmark/"]
-    insteadOf = github:
-[url "git://anongit.kde.org/"]
-    insteadOf = kde:
-[url "git@git.kde.org:"]
-    pushInsteadOf = kde:
 [core]
     excludesfile = ~/.gitexcludes
     autocrlf = false
+[diff]
+    algorithm = histogram
+    compactionHeuristic = true
+    noprefix = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
 [merge]
     tool = vimdiff
     ff = only
 [push]
 	default = tracking
-[diff]
-    algorithm = histogram
-    compactionHeuristic = true
-    noprefix = true
 [rerere]
     enabled = true
     autoupdate = true
@@ -41,10 +37,16 @@
     date = relative
 [status]
 	showStash = true
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
 [submodule]
-	recurse = true
+    recurse = true
+[url "git@github.com:sandsmark/"]
+    insteadOf = github:
+[url "git@github.com:"]
+    insteadOf = https://github.com/
+[url "git://anongit.kde.org/"]
+    insteadOf = kde:
+[url "git@git.kde.org:"]
+    pushInsteadOf = kde:
+[user]
+    name = Martin T. H. Sandsmark
+    email = martin.sandsmark@kde.org
