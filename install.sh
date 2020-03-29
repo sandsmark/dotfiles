@@ -16,6 +16,7 @@ for file in compton.conf; do
 done
 
 mkdir -p ~/.vim/tmp/
+mkdir -p ~/.vim/plugin/
 for file in linuxsty.vim qml.vim; do
     rm -f ~/.vim/plugin/$file;
     ln -s $PWD/$file ~/.vim/plugin/$file;
