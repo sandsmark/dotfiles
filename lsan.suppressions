@@ -2,3 +2,6 @@ leak:libdbus
 leak:libfontconfig
 leak:QAccessibleObject
 leak:QAccessibleWidget
+leak:libGLX_mesa
+leak:libpulse
+leak:QScroller
