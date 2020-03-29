@@ -58,8 +58,12 @@ declare -x QT_QPA_PLATFORMTHEME=sandsmark
 
 declare -x LSAN_OPTIONS=suppressions=${HOME}/.lsan.suppressions
 
-declare -x LIBVA_DRIVER_NAME=iHD
-declare -x VDPAU_DRIVER=va_gl
+# Not the best way, but simplest and fastet to check if the nvidia driver is
+# installed
+if [ ! -f "/usr/lib/modprobe.d/nvidia.conf" ]; then
+    declare -x LIBVA_DRIVER_NAME=i965
+    declare -x VDPAU_DRIVER=va_gl
+fi
 
 # Java is retarded
 declare -x _JAVA_AWT_WM_NONREPARENTING=1
