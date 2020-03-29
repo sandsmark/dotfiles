@@ -36,7 +36,9 @@ declare -x HISTSIZE=-1
 declare -x BROWSER=chromium
 
 declare -x CCACHE_PATH="/usr/bin"
-declare -x GCC_COLORS=auto
+declare -x GCC_COLORS=always
+declare -x CXXFLAGS=-fdiagnostics-color=always
+declare -x CFLAGS=-fdiagnostics-color=always
 
 declare -x MALLOC_CHECK_=1
 
