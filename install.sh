@@ -21,6 +21,12 @@ for file in linuxsty.vim qml.vim; do
     ln -s $PWD/$file ~/.vim/plugin/$file;
 done
 
+mkdir -p ~/.config/firejail/
+for file in makepkg.profile; do
+    rm -f ~/.config/firejail/;
+    ln -s $PWD/$file ~/.config/firejail/$file;
+done
+
 touch ~/.bash_history
 
 # Update ~/.less from ~/.lesskey

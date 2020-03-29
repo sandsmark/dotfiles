@@ -1,0 +1,39 @@
+# Firejail profile for makepkg
+# Not really for security, mostly just to avoid badly written build systems
+# (mono shit, python, etc.) from crapping up my "global" setup/home folder
+# Hence why this is mostly just disabling a lot of the default firejail makepkg
+# config.
+
+# need to allow access to wifi
+net wlan0
+
+# netlink because mono build stuff needs it
+protocol unix,inet,inet6,netlink
+
+# I store all pkgbuilds in ~/pkg
+whitelist ${HOME}/pkg
+
+whitelist ${HOME}/.gnupg/gpg.conf
+read-only ${HOME}/.gnupg/gpg.conf
+whitelist ${HOME}/.gnupg/trustdb.gpg
+read-only ${HOME}/.gnupg/trustdb.gpg
+whitelist ${HOME}/.gnupg/pubring.gpg
+read-only ${HOME}/.gnupg/pubring.gpg
+
+whitelist ${HOME}/.ccache
+
+# mono nuget shit
+whitelist ${HOME}/.nuget
+whitelist ${HOME}/.config/NuGet
+
+# don't allow X11 connections
+x11 none
+blacklist ${HOME}/.Xauthority
+
+# These break some configure checks in some packages
+ignore memory-deny-write-execute
+ignore noexec ${HOME}
+ignore noexec /tmp
+
+include /etc/firejail/makepkg.profile
+
