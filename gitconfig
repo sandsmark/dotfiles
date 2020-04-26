@@ -1,3 +1,5 @@
+[branch]
+    sort = -authordate
 [color]
     ui = true
     branch = always
