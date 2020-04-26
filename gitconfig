@@ -14,6 +14,8 @@
     autocrlf = false
 [diff]
     algorithm = histogram
+    colorMoved = true
+    colorMovedWS = ignore-all-space
     compactionHeuristic = true
     noprefix = true
 [filter "lfs"]
