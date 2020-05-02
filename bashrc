@@ -209,7 +209,7 @@ else if (NF>3) print $1 "/" $2 "/.../" $NF;
 else print $1 "/.../" $NF; }
 else print $0;}'"'"')'
 
-PS1="${rgb_gray}`hostname`${rgb_usr}: ${rgb_std}${ELIDED_PATH}/${rgb_cadet}\$(parse_git_branch)${rgb_restore} "
+PS1="${rgb_gray}${rgb_gray}[\t] `hostname`${rgb_usr}: ${rgb_std}${ELIDED_PATH}/${rgb_cadet}\$(parse_git_branch)${rgb_restore} "
 
 unset   rgb_restore   \
         rgb_black     \
