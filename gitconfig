@@ -26,6 +26,8 @@
 [merge]
     tool = vimdiff
     ff = only
+[pull]
+    ff = only
 [push]
 	default = tracking
 [rerere]
