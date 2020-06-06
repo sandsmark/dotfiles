@@ -11,7 +11,7 @@
 " the buffer's path matches one of the pattern. In the following example,
 " options will be applied only if "/linux/" or "/kernel" is in buffer's path.
 "
-let g:linuxsty_patterns = [ "src/linux", "src/mame", "src/uboot", "src/efibootmgr" ]
+let g:linuxsty_patterns = [ "src/linux", "src/mame", "src/uboot", "src/efibootmgr", "src/mlt", "src/dosfstools" ]
 
 if exists("g:loaded_linuxsty")
     finish
@@ -23,7 +23,7 @@ let g:loaded_linuxsty = 1
 augroup linuxsty
     autocmd!
 
-    autocmd FileType c,cpp,dts,asm,cfg call s:LinuxConfigure()
+    autocmd FileType c,cpp,dts,asm,cfg,sh call s:LinuxConfigure()
     autocmd FileType diff,kconfig setlocal tabstop=8
 augroup END
 
