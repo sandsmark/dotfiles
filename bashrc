@@ -159,6 +159,8 @@ function mac-vendor {
 function vim    {
     if [[ "$@" =~ (.*):([0-9]+) ]]; then
         /usr/bin/vim +"${BASH_REMATCH[2]}" "${BASH_REMATCH[1]}"
+    elif [[ "$#" -eq "2" && "$1" = "vi" ]]; then
+        /usr/bin/vim "$2"
     else
         /usr/bin/vim "$@"
     fi
