@@ -13,9 +13,12 @@ mkdir -p ~/.ccache/
 rm -f ~/.ccache/ccache.conf
 ln -s $PWD/ccache.conf ~/.ccache/ccache.conf
 
+# Nuke old configs
+rm -f "$HOME/.config/compton.conf"
+
 # xdg configs in ~/.config
 mkdir -p ~/.config/
-for file in compton.conf; do
+for file in picom.conf; do
     rm -f ~/.config/$file
     ln -s $PWD/$file ~/.config/$file;
 done
