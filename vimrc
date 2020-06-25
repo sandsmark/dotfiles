@@ -80,6 +80,9 @@ let spell_language_list = "norsk,english"
 :command Qall qall
 
 
+" Redraw screen and clear search highlight
+nnoremap <silent> <C-l> :nohl<CR><C-l>
+
 "" Change directory to the directory of the file I'm working on.
 "autocmd BufEnter * 
 "	    \ if isdirectory( '%:p:h' ) |
