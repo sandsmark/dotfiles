@@ -71,6 +71,9 @@ export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswi
 # Gradle is retarded
 declare -x GRADLE_OPTS=-Dorg.gradle.daemon=false
 
+# Dumb stuff
+declare -x IDF_PATH=/home/sandsmark/src/esp-idf/
+
 
 #################
 # shell variables
