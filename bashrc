@@ -156,14 +156,28 @@ function mac-vendor {
 
 }
 
-function vim    {
+function vim {
+    # Handle filename:linenumber
     if [[ "$@" =~ (.*):([0-9]+) ]]; then
-        /usr/bin/vim +"${BASH_REMATCH[2]}" "${BASH_REMATCH[1]}"
-    elif [[ "$#" -eq "2" && "$1" = "vi" ]]; then
-        /usr/bin/vim "$2"
-    else
-        /usr/bin/vim "$@"
+        return /usr/bin/vim +"${BASH_REMATCH[2]}" "${BASH_REMATCH[1]}"
     fi
+
+    # Handle standard type of 'vi vi'
+    FILE="$@"
+    if [[ "$#" -eq "2" && "$1" = "vi" ]]; then
+        FILE="$2"
+    fi
+
+    # Handle standard a/ and b/ prefix from git diff
+    # Can't use noprefix config in git because that screws up patches
+    if [[ "$FILE" =~ (a\/|b\/)(.*) ]] && [[ ! -e "$FILE" ]]; then
+        FIXED="${BASH_REMATCH[2]}"
+        if [[ -e "$FIXED" ]]; then
+            FILE="$FIXED"
+        fi
+    fi
+
+    /usr/bin/vim "$FILE"
 }
 
 #############

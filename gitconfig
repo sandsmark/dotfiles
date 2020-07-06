@@ -17,7 +17,6 @@
     colorMoved = true
     colorMovedWS = ignore-all-space
     compactionHeuristic = true
-    noprefix = true
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
