@@ -159,7 +159,8 @@ function mac-vendor {
 function vim {
     # Handle filename:linenumber
     if [[ "$@" =~ (.*):([0-9]+) ]]; then
-        return /usr/bin/vim +"${BASH_REMATCH[2]}" "${BASH_REMATCH[1]}"
+        /usr/bin/vim +"${BASH_REMATCH[2]}" "${BASH_REMATCH[1]}"
+        return 0
     fi
 
     # Handle standard type of 'vi vi'
