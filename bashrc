@@ -163,9 +163,14 @@ function vim {
         return 0
     fi
 
+    if [[ "$#" -ne "2" ]]; then
+        /usr/bin/vim $@
+        return 0
+    fi
+
     # Handle standard type of 'vi vi'
     FILE="$@"
-    if [[ "$#" -eq "2" && "$1" = "vi" ]]; then
+    if [[ "$1" = "vi" ]]; then
         FILE="$2"
     fi
 
