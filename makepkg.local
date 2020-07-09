@@ -35,5 +35,3 @@ ignore memory-deny-write-execute
 ignore noexec ${HOME}
 ignore noexec /tmp
 
-include /etc/firejail/makepkg.profile
-
