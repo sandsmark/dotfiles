@@ -31,8 +31,8 @@ done
 # firejail sandboxing config
 mkdir -p ~/.config/firejail/
 for file in makepkg.local; do
-    rm -f ~/.config/firejail/;
-    ln -s $PWD/$file ~/.config/firejail/$file;
+    rm -f ~/.config/firejail/"$file";
+    ln -s "$PWD/$file" ~/.config/firejail/"$file";
 done
 
 
