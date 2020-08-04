@@ -48,14 +48,13 @@ declare -x BC_ENV_ARGS=~/.bcrc
 
 declare -x QT_NO_GLIB=1
 declare -x QT_FORCE_STDERR_LOGGING=1
+declare -x QT_AUTO_SCREEN_SCALE_FACTOR=0
+declare -x QT_QPA_PLATFORMTHEME=sandsmark
 
 declare -x QTC_HELPVIEWER_BACKEND=textbrowser
 
-declare -x QT_AUTO_SCREEN_SCALE_FACTOR=0
-
 declare -x QTKEYCHAIN_BACKEND=kwallet5
 
-declare -x QT_QPA_PLATFORMTHEME=sandsmark
 
 declare -x LSAN_OPTIONS=suppressions=${HOME}/.lsan.suppressions
 
