@@ -16,8 +16,8 @@ ln -s $PWD/ccache.conf ~/.ccache/ccache.conf
 # xdg configs in ~/.config
 mkdir -p ~/.config/
 for file in compton.conf; do
-    rm -f ~/.$file
-    ln -s $PWD/$file ~/config/.$file;
+    rm -f ~/.config/$file
+    ln -s $PWD/$file ~/.config/$file;
 done
 
 # vim tmp dir and plugins
