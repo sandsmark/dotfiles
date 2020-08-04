@@ -47,6 +47,7 @@ declare -x BC_ENV_ARGS=~/.bcrc
 #declare -x WINEARCH="win32"
 
 declare -x QT_NO_GLIB=1
+declare -x QT_FORCE_STDERR_LOGGING=1
 
 declare -x QTC_HELPVIEWER_BACKEND=textbrowser
 
