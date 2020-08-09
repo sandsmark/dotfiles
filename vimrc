@@ -12,7 +12,7 @@ let vimdir=$HOME . '/.vim/'
 let &viminfo="'20," . '%,n' . vimdir . 'viminfo'
 let &backupdir=vimdir . 'tmp'
 
-
+" Stop whining when setting up on a new machine
 if !isdirectory(&backupdir)
     call mkdir(&backupdir, "p")
 endif
@@ -27,45 +27,35 @@ autocmd BufReadPost *
 
 set ai				" Always set auto-indenting on
 set bs=2		    " Allow backspacing over everything in insert mode
-set bg=dark			" gir ugly ugly farger, men men
+set bg=dark			" dark background good
 set backup			" Keep a backup file
-set backspace=2
-set clipboard+=unnamed		" put yanks/etc on the clipboard
-set errorbells			" beep/flash on errors, vil vi ha det da ???
-set expandtab
-set foldmethod=marker
+set backspace=2     " 'make backspace work like most other programs' says the documentation
+set errorbells			" beep/flash on errors
+set expandtab           " expand tabs to spaces
+set foldmethod=manual   " I don't trust people
 set foldlevelstart=99		" start with all folds open
 set foldopen-=search		" don't open folds when you search into them
 set foldopen-=undo		" don't open folds when you undo stuff
 set history=100			" keep 50 lines of command history
-set hidden			" lukker ikke ei fil i et buffer når du forlater den ("abandon")
-set hlsearch			" highlighter siste søk, kjekt....
-"set incsearch			" noen syntes dette er nice, jeg synes ikke det :P
-set nocompatible		" Use Vim defaults (much better!)
-set nowrap			" vi liker da ikke wrap'ing... bare dritt
-set number			" for å få linjenumrering... litt slitsomt i starten
-set nowarn
+set hlsearch			" highlight last search
+set nocompatible		" Use Vim defaults, not annoying vi
+set nowrap			" fuckg wrapping
+set number			" show line numbers
+set nowarn          " I don't care
 set ruler			" Show the cursor position all the time
 set suffixes+=.class,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-set showcmd
-set showmatch			" vise fold'a kode eller noe... ???
-set smartcase			" lurt når man driver å søker...
-set ignorecase          " ignore case by default when searching
+set showcmd         " show last command
+set showmatch			" show matching brace when inserting
+set smartcase			" search good
 set shortmess=at		"shortens messages to avoid 'press a key' prompt 
 set shiftwidth=2		" two spaces per sw
 set diffopt+=iwhite     " ignore trailing whitespace in vimdiff
-" set smarttab			" sw at start, not tab
-set sts=4
-set sw=4
-set ts=8
-set tabstop=4			" The One True Tab
+set tabstop=8			" be very explicit when people are annoying
 set softtabstop=4
 set shiftwidth=4
-set expandtab
 set timeout			" allow keys to timeout
 set ttimeoutlen=100		" Timeout of successive keys from keyboard driver
-set novisualbell			" sørge for at vi bare får flash ihverfall
-"set viminfo='20,\"50		" read/write a .viminfo file -- limit to only 50
+set novisualbell			" just let the terminal blink
 set wildmode=list:longest	"(file-listing when opening a new file)
 
 " latex-suite wants grep to always generate a file-name.
@@ -77,9 +67,6 @@ let spell_insert_mode = 0
 let spell_auto_type = "tex,mail"
 let spell_language_list = "norsk,english"
 
-" Setup Taglist plugin
-let Tlist_Ctags_Cmd=$HOME . '/local/' . tolower(substitute(osys,"\n",'','')) . '/bin/ctags'
-
 " F1 for help is really annoying.
 :nmap <F1> :echo<CR>
 :imap <F1> <C-o>:echo<CR>
@@ -88,6 +75,9 @@ let Tlist_Ctags_Cmd=$HOME . '/local/' . tolower(substitute(osys,"\n",'','')) . '
 
 " Misstyping ; is annoying
 :nnoremap ; :
+" Because I type this wrong all the time
+:command Q q
+
 
 "" Change directory to the directory of the file I'm working on.
 "autocmd BufEnter * 
@@ -111,10 +101,6 @@ set encoding=utf-8
 set termencoding=utf-8
 au BufNewFile,BufRead mutt*    set tw=77 ai nocindent fileencoding=utf-8
 au BufNewFile,BufRead psql.edit.*    set tw=77 ai nocindent fileencoding=utf-8 filetype=sql
-
-
-" Because I type this wrong all the time
-:command Q q
 
 
 " Highlight bogus whitespace at the end of files
