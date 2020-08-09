@@ -52,12 +52,13 @@ syn match   qmlUnboundProperty   "^\<[A-Za-z][_A-Za-z.0-9]*\s*$"
 syn match   qmlObjectId        "\<[a-z][a-zA-Z]*" contained
 syn match   qmlIdProperty        "\<id\s*:\s*" nextgroup=qmlObjectId
 syn match   qmlPropertyNameUnbound      "\<[A-Za-z]\+\s*$" contained
-syn match   qmlPropertyNameBound      "\<[A-Za-z]\+\s*:" contained nextgroup=qmlExpr
+syn match   qmlPropertyNameBound      "\<[A-Za-z]\+\s*:\s*" contained nextgroup=qmlExpr
 syn match   qmlPropertyType      "\<[A-Za-z]\+\s\+" contains=@qmlType nextgroup=qmlPropertyNameBound,qmlPropertyNameUnbound contained
 syn match   qmlPropertyDecl      "\<property\s\+" nextgroup=qmlPropertyType
 syn match   qmlModuleVersion      "\d[0-9.]*" contained
 syn match   qmlModule      "[A-Za-z.]\+\s\+" nextgroup=qmlModuleVersion contained
 syn match   qmlImport      "^import\s\+" nextgroup=qmlModule
+syn match   qmlEnum      "\s\+[A-Z][A-Za-z]\+\.[A-Z][A-Za-z]\+"
 
 syn keyword qmlConditional  if else switch
 syn keyword qmlRepeat       while for do in
@@ -148,7 +149,7 @@ if version >= 508 || !exists("did_qml_syn_inits")
     HiLink qmlDeclaration       Function
 
     HiLink qmlIdProperty            Identifier
-    HiLink qmlObjectId              Special
+    HiLink qmlObjectId              Constant
 
     HiLink qmlBindingProperty       Identifier
     HiLink qmlUnboundProperty       Identifier
@@ -161,6 +162,8 @@ if version >= 508 || !exists("did_qml_syn_inits")
     HiLink qmlImport                Include
     HiLink qmlModule                String
     HiLink qmlModuleVersion         Number
+
+    HiLink qmlEnum              Structure
 
     delcommand HiLink
 endif
