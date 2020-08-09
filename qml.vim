@@ -1,3 +1,5 @@
+" Mostly from https://github.com/peterhoeg/vim-qml
+" But I removed some stuff I don't think was a good idea
 
 " Vim syntax file
 " Language:     QML
