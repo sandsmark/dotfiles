@@ -60,6 +60,7 @@ syn keyword qmlException		try catch finally throw
 syn keyword qmlMessage		alert confirm prompt status
 syn keyword qmlGlobal		self
 syn keyword qmlReserved		abstract boolean byte char class const debugger double enum export extends final float goto implements import int interface long native package private protected public short static super synchronized throws transient volatile 
+syn keyword qmlDeclaration       property signal readonly
 
 if exists("qml_fold")
     syn match	qmlFunction      "\<function\>"
@@ -130,6 +131,7 @@ if version >= 508 || !exists("did_qml_syn_inits")
   HiLink qmlNonBindingColon	NONE
   HiLink qmlBindingProperty	Label
   HiLink qmlIdProperty		Identifier
+  HiLink qmlDeclaration       Function
 
   delcommand HiLink
 endif
