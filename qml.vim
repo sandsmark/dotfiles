@@ -142,5 +142,3 @@ let b:current_syntax = "qml"
 if main_syntax == 'qml'
   unlet main_syntax
 endif
-
-" vim: ts=8
