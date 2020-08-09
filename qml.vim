@@ -34,8 +34,8 @@ syn match   qmlLineComment    "\/\/.*" contains=@Spell,qmlCommentTodo
 syn match   qmlCommentSkip    "^[ \t]*\*\($\|[ \t]\+\)"
 syn region  qmlComment	      start="/\*"  end="\*/" contains=@Spell,qmlCommentTodo
 syn match   qmlSpecial	      "\\\d\d\d\|\\."
-syn region  qmlStringD	      start=+"+  skip=+\\\\\|\\"\|\\$+  end=+"\|$+  contains=qmlSpecial,@htmlPreproc,@Spell
-syn region  qmlStringS	      start=+'+  skip=+\\\\\|\\'\|\\$+  end=+'\|$+  contains=qmlSpecial,@htmlPreproc,@Spell
+syn region  qmlStringD	      start=+"+  skip=+\\\\\|\\"\|\\$+  end=+"+ keepend contains=qmlSpecial,@htmlPreproc,@Spell
+syn region  qmlStringS	      start=+'+  skip=+\\\\\|\\'\|\\$+  end=+'+ keepend contains=qmlSpecial,@htmlPreproc,@Spell
 syn region  qmlStringT           start=+`+  skip=+\\\\\|\\`\|\\$+  end=+`+  keepend  contains=qmlTemplateExpr,qmlSpecial,@htmlPreproc,@Spell
 
 syn match   qmlCharacter        "'\\.'"
