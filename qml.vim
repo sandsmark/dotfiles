@@ -50,6 +50,7 @@ syn keyword qmlRepeat		while for do in
 syn keyword qmlBranch		break continue
 syn keyword qmlOperator		new delete instanceof typeof
 syn keyword qmlJsType		Array Boolean Date Function Number Object String RegExp
+syn keyword qmlType              action alias bool color date double enumeration font int list point real rect size string time url variant vector3d
 syn keyword qmlStatement		return with
 syn keyword qmlBoolean		true false
 syn keyword qmlNull		null undefined
@@ -107,6 +108,7 @@ if version >= 508 || !exists("did_qml_syn_inits")
   HiLink qmlBranch		Conditional
   HiLink qmlOperator		Operator
   HiLink qmlJsType			Type
+  HiLink qmlType              Type
   HiLink qmlObjectLiteralType	Type
   HiLink qmlStatement		Statement
   HiLink qmlFunction		Function
