@@ -47,8 +47,14 @@ syn match   qmlNumber            "-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
 syn region  qmlRegexpString      start=+/[^/*]+me=e-1 skip=+\\\\\|\\/+ end=+/[gi]\{0,2\}\s*$+ end=+/[gi]\{0,2\}\s*[;.,)\]}]+me=e-1 contains=@htmlPreproc oneline
 syn match   qmlObjectLiteralType "[A-Za-z][_A-Za-z0-9]*\s*\({\)\@="
 syn region  qmlTernaryColon      start="?" end=":" contains=@qmlExpr,qmlBraces,qmlParens
-syn match   qmlBindingProperty   "\<[A-Za-z][_A-Za-z.0-9]*\s*:"
-syn match   qmlIdProperty        "\<id\s*:\s*[A-Za-z][_A-Za-z.0-9]*"
+syn match   qmlBindingProperty   "\<[A-Za-z][_A-Za-z.0-9]*\s*:" nextgroup=qmlExpr
+syn match   qmlUnboundProperty   "^\<[A-Za-z][_A-Za-z.0-9]*\s*$"
+syn match   qmlObjectId        "\<[a-z][a-zA-Z]*" contained
+syn match   qmlIdProperty        "\<id\s*:\s*" nextgroup=qmlObjectId
+syn match   qmlPropertyNameUnbound      "\<[A-Za-z]\+\s*$" contained
+syn match   qmlPropertyNameBound      "\<[A-Za-z]\+\s*:" contained nextgroup=qmlExpr
+syn match   qmlPropertyType      "\<[A-Za-z]\+\s\+" contains=@qmlType nextgroup=qmlPropertyNameBound,qmlPropertyNameUnbound contained
+syn match   qmlPropertyDecl      "\<property\s\+" nextgroup=qmlPropertyType
 
 syn keyword qmlConditional  if else switch
 syn keyword qmlRepeat       while for do in
@@ -134,9 +140,20 @@ if version >= 508 || !exists("did_qml_syn_inits")
     HiLink qmlReserved          Keyword
     HiLink qmlDebug             Debug
     HiLink qmlConstant          Label
-    HiLink qmlBindingProperty   Label
-    HiLink qmlIdProperty        Identifier
+
     HiLink qmlDeclaration       Function
+
+    HiLink qmlIdProperty            Identifier
+    HiLink qmlObjectId              Special
+
+    HiLink qmlBindingProperty       Identifier
+    HiLink qmlUnboundProperty       Identifier
+    HiLink qmlPropertyDecl          Statement
+    HiLink qmlPropertyType          Type
+    HiLink qmlPropertyNameBound     Identifier
+    HiLink qmlPropertyNameUnbound   Identifier
+    HiLink qmlPropertyTarget        Tag
+
 
     delcommand HiLink
 endif
