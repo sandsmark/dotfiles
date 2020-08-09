@@ -35,6 +35,7 @@ syn region  qmlComment	      start="/\*"  end="\*/" contains=@Spell,qmlCommentTo
 syn match   qmlSpecial	      "\\\d\d\d\|\\."
 syn region  qmlStringD	      start=+"+  skip=+\\\\\|\\"\|\\$+  end=+"\|$+  contains=qmlSpecial,@htmlPreproc
 syn region  qmlStringS	      start=+'+  skip=+\\\\\|\\'\|\\$+  end=+'\|$+  contains=qmlSpecial,@htmlPreproc
+syn region  qmlStringT           start=+`+  skip=+\\\\\|\\`\|\\$+  end=+`+  keepend  contains=qmlTemplateExpr,qmlSpecial,@htmlPreproc,@Spell
 
 syn match   qmlCharacter        "'\\.'"
 syn match   qmlNumber	       "-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
@@ -70,6 +71,7 @@ if exists("qml_fold")
     setlocal foldtext=getline(v:foldstart)
 else
     syn keyword	qmlFunction      function
+  syn match   qmlArrowFunction    "=>"
     syn match	qmlBraces	   "[{}\[\]]"
     syn match	qmlParens	   "[()]"
 endif
@@ -97,6 +99,7 @@ if version >= 508 || !exists("did_qml_syn_inits")
   HiLink qmlSpecial		Special
   HiLink qmlStringS		String
   HiLink qmlStringD		String
+  HiLink qmlStringT           String
   HiLink qmlCharacter		Character
   HiLink qmlNumber		Number
   HiLink qmlConditional		Conditional
@@ -107,6 +110,7 @@ if version >= 508 || !exists("did_qml_syn_inits")
   HiLink qmlObjectLiteralType	Type
   HiLink qmlStatement		Statement
   HiLink qmlFunction		Function
+  HiLink qmlArrowFunction     Function
   HiLink qmlBraces		Function
   HiLink qmlError		Error
   HiLink qmlNull			Keyword
