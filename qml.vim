@@ -38,6 +38,8 @@ syn region  qmlStringD	      start=+"+  skip=+\\\\\|\\"\|\\$+  end=+"+ keepend c
 syn region  qmlStringS	      start=+'+  skip=+\\\\\|\\'\|\\$+  end=+'+ keepend contains=qmlSpecial,@htmlPreproc,@Spell
 syn region  qmlStringT           start=+`+  skip=+\\\\\|\\`\|\\$+  end=+`+  keepend  contains=qmlTemplateExpr,qmlSpecial,@htmlPreproc,@Spell
 
+syntax region  qmlTemplateExpr contained  matchgroup=qmlBraces start=+${+ end=+}+  keepend  contains=@qmlExpr
+
 syn match   qmlCharacter        "'\\.'"
 syn match   qmlNumber	       "-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
 syn region  qmlRegexpString     start=+/[^/*]+me=e-1 skip=+\\\\\|\\/+ end=+/[gi]\{0,2\}\s*$+ end=+/[gi]\{0,2\}\s*[;.,)\]}]+me=e-1 contains=@htmlPreproc oneline
