@@ -1,10 +1,14 @@
+
 " Vim syntax file
-" Language:	QML
-" Maintainer:	Warwick Allison <warwick.allison@nokia.com>
-" Updaters:	
-" URL:		
-" Changes:	
-" Last Change:	2009 Apr 30
+" Language:     QML
+" Maintainer:   Peter Hoeg <peter@hoeg.com>
+" Updaters:     Refer to CONTRIBUTORS.md
+" URL:          https://github.com/peterhoeg/vim-qml
+" Changes:      `git log` is your friend
+" Last Change:  2017-11-11
+"
+" This file is bassed on the original work done by Warwick Allison
+" <warwick.allison@nokia.com> whose did about 99% of the work here.
 
 " Based on javascript syntax (as is QML)
 
@@ -24,14 +28,13 @@ endif
 
 syn case ignore
 
-
-syn keyword qmlCommentTodo      TODO FIXME XXX TBD contained
-syn match   qmlLineComment      "\/\/.*" contains=@Spell,qmlCommentTodo
-syn match   qmlCommentSkip      "^[ \t]*\*\($\|[ \t]\+\)"
-syn region  qmlComment	       start="/\*"  end="\*/" contains=@Spell,qmlCommentTodo
-syn match   qmlSpecial	       "\\\d\d\d\|\\."
-syn region  qmlStringD	       start=+"+  skip=+\\\\\|\\"\|\\$+  end=+"\|$+  contains=qmlSpecial,@htmlPreproc
-syn region  qmlStringS	       start=+'+  skip=+\\\\\|\\'\|\\$+  end=+'\|$+  contains=qmlSpecial,@htmlPreproc
+syn keyword qmlCommentTodo    TODO FIXME XXX TBD contained
+syn match   qmlLineComment    "\/\/.*" contains=@Spell,qmlCommentTodo
+syn match   qmlCommentSkip    "^[ \t]*\*\($\|[ \t]\+\)"
+syn region  qmlComment	      start="/\*"  end="\*/" contains=@Spell,qmlCommentTodo
+syn match   qmlSpecial	      "\\\d\d\d\|\\."
+syn region  qmlStringD	      start=+"+  skip=+\\\\\|\\"\|\\$+  end=+"\|$+  contains=qmlSpecial,@htmlPreproc
+syn region  qmlStringS	      start=+'+  skip=+\\\\\|\\'\|\\$+  end=+'\|$+  contains=qmlSpecial,@htmlPreproc
 
 syn match   qmlCharacter        "'\\.'"
 syn match   qmlNumber	       "-\=\<\d\+L\=\>\|0[xX][0-9a-fA-F]\+\>"
