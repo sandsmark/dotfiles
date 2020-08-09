@@ -17,11 +17,11 @@
     colorMoved = true
     colorMovedWS = ignore-all-space
     compactionHeuristic = true
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+#[filter "lfs"]
+#	process = git-lfs filter-process
+#	required = true
+#	clean = git-lfs clean -- %f
+#	smudge = git-lfs smudge -- %f
 [merge]
     tool = vimdiff
     ff = only
