@@ -77,6 +77,7 @@ let spell_language_list = "norsk,english"
 :nnoremap ; :
 " Because I type this wrong all the time
 :command Q q
+:command Qall qall
 
 
 "" Change directory to the directory of the file I'm working on.
