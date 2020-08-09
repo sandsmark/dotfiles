@@ -28,7 +28,7 @@ if version < 600 && exists("qml_fold")
     unlet qml_fold
 endif
 
-syn case ignore
+"syn case ignore
 
 syn cluster qmlExpr           contains=qmlStringD,qmlStringS,qmlStringT,SqmlCharacter,qmlNumber,qmlObjectLiteralType,qmlBoolean,qmlType,qmlJsType,qmlNull,qmlGlobal,qmlFunction,qmlArrowFunction
 syn keyword qmlCommentTodo    TODO FIXME XXX TBD contained
