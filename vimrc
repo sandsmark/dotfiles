@@ -46,6 +46,7 @@ set ruler			" Show the cursor position all the time
 set suffixes+=.class,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set showcmd         " show last command
 set showmatch			" show matching brace when inserting
+set ignorecase
 set smartcase			" search good
 set shortmess=at		"shortens messages to avoid 'press a key' prompt 
 set shiftwidth=2		" two spaces per sw
