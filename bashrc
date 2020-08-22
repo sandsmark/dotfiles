@@ -164,30 +164,34 @@ function vim {
     # Handle filename:linenumber
     if [[ "$@" =~ (.*):([0-9]+) ]]; then
         /usr/bin/vim +"${BASH_REMATCH[2]}" "${BASH_REMATCH[1]}"
-        return 0
-    fi
-
-    if [[ "$#" -ne "2" ]]; then
-        /usr/bin/vim $@
-        return 0
+        return $?
     fi
 
     # Handle standard type of 'vi vi'
-    FILE="$@"
     if [[ "$1" = "vi" ]]; then
-        FILE="$2"
+        /usr/bin/vim "$2"
+        return $?
+    fi
+
+    # We don't handle more than one file below
+    if [[ "$#" -ne "1" ]]; then
+        /usr/bin/vim $@
+        return $?
     fi
 
     # Handle standard a/ and b/ prefix from git diff
     # Can't use noprefix config in git because that screws up patches
-    if [[ "$FILE" =~ (a\/|b\/)(.*) ]] && [[ ! -e "$FILE" ]]; then
+    # TODO: handle multiple arguments
+    if [[ "$1" =~ (a\/|b\/)(.*) ]] && [[ ! -e "$1" ]]; then
         FIXED="${BASH_REMATCH[2]}"
         if [[ -e "$FIXED" ]]; then
-            FILE="$FIXED"
+            /usr/bin/vim "$FIXED"
+            return $?
         fi
     fi
 
-    /usr/bin/vim "$FILE"
+    /usr/bin/vim $@
+    return $?
 }
 
 #############
