@@ -229,11 +229,7 @@ else
 fi
 
 function parse_git_branch {
-    DESC="$(git describe --always --broken --dirty 2> /dev/null)"
-    if [ ! -z "$DESC" ]; then
-        BRANCH="$(git branch --show-current --no-color 2>/dev/null)"
-        echo " ($BRANCH $DESC)"
-    fi
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 
