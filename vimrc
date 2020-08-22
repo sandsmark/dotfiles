@@ -107,6 +107,8 @@ set termencoding=utf-8
 au BufNewFile,BufRead mutt*    set tw=77 ai nocindent fileencoding=utf-8
 au BufNewFile,BufRead psql.edit.*    set tw=77 ai nocindent fileencoding=utf-8 filetype=sql
 
+" Open multiple files in new tabs
+au VimEnter * if !&diff | tab all | tabfirst | endif
 
 " Highlight bogus whitespace at the end of files
 highlight WhitespaceEOL ctermbg=red guibg=red
