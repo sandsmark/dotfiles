@@ -110,6 +110,10 @@ au BufNewFile,BufRead psql.edit.*    set tw=77 ai nocindent fileencoding=utf-8 f
 " Open multiple files in new tabs
 au VimEnter * if !&diff | tab all | tabfirst | endif
 
+" Colors
+" dark background good
+set background=dark
+
 " Highlight bogus whitespace at the end of files
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
@@ -117,3 +121,12 @@ match WhitespaceEOL /\s\+$/
 " Make spelling errors readable
 highlight SpellBad ctermbg=0 ctermfg=1
 
+" Make diffs readable, darker backgrounds
+"  - darkest red
+highlight DiffText ctermbg=88
+"  - dark pink
+highlight DiffChange ctermbg=54
+"  - navy blue, darkest blue I could find
+highlight DiffAdd ctermbg=17
+"  - dark green
+highlight DiffDelete ctermbg=22
