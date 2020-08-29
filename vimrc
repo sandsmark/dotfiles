@@ -25,39 +25,44 @@ autocmd BufReadPost *
             \ endif
 
 
-set ai				" Always set auto-indenting on
-set bs=2		    " Allow backspacing over everything in insert mode
-set bg=dark			" dark background good
-set backup			" Keep a backup file
-set backspace=2     " 'make backspace work like most other programs' says the documentation
-set errorbells			" beep/flash on errors
-set expandtab           " expand tabs to spaces
-set foldmethod=manual   " I don't trust people
-set foldlevelstart=99		" start with all folds open
-set foldopen-=search		" don't open folds when you search into them
-set foldopen-=undo		" don't open folds when you undo stuff
-set history=100			" keep 50 lines of command history
-set hlsearch			" highlight last search
-set nocompatible		" Use Vim defaults, not annoying vi
-set nowrap			" fuckg wrapping
-set number			" show line numbers
-set nowarn          " I don't care
-set ruler			" Show the cursor position all the time
+set backup              " Keep a backup file
+set errorbells          " beep/flash on errors
+set history=100         " keep 100 lines of command history
+set nocompatible        " Use Vim defaults, not annoying vi
+set nowrap              " fuckg wrapping
+set number              " show line numbers
+set nowarn              " I don't care
+set ruler               " Show the cursor position all the time
 set suffixes+=.class,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-set showcmd         " show last command
-set showmatch			" show matching brace when inserting
-set ignorecase
-set smartcase			" search good
-set shortmess=at		"shortens messages to avoid 'press a key' prompt 
-set shiftwidth=2		" two spaces per sw
+set showcmd             " show last command
+set showmatch           " show matching brace when inserting
+set shortmess=at        " shortens messages to avoid 'press a key' prompt
 set diffopt+=iwhite     " ignore trailing whitespace in vimdiff
-set tabstop=8			" be very explicit when people are annoying
+set novisualbell        " just let the terminal blink
+set wildmode=list:longest   " file-listing when opening a directory
+
+" Folding
+set foldmethod=manual   " I don't trust people
+set foldlevelstart=99   " start with all folds open
+set foldopen-=search    " don't open folds when you search into them
+set foldopen-=undo      " don't open folds when you undo stuff
+
+" Input
+set timeout             " allow keys to timeout
+set ttimeoutlen=100     " Timeout of successive keys from keyboard driver, avoid annoying delays
+
+" Indentation
+set ai              " Always set auto-indenting on
+set backspace=2     " Allow backspacing over everything in insert mode
+set expandtab       " expand tabs to spaces
+set tabstop=8       " be very explicit when people are annoying
 set softtabstop=4
 set shiftwidth=4
-set timeout			" allow keys to timeout
-set ttimeoutlen=100		" Timeout of successive keys from keyboard driver
-set novisualbell			" just let the terminal blink
-set wildmode=list:longest	"(file-listing when opening a new file)
+
+" Search
+set hlsearch            " highlight last search
+set smartcase           " search good
+set ignorecase          " ignore case by default
 
 " latex-suite wants grep to always generate a file-name.
 set grepprg=grep\ -nH\ $*
@@ -117,6 +122,7 @@ set background=dark
 " Highlight bogus whitespace at the end of files
 highlight WhitespaceEOL ctermbg=red guibg=red
 match WhitespaceEOL /\s\+$/
+
 
 " Make spelling errors readable
 highlight SpellBad ctermbg=0 ctermfg=1
