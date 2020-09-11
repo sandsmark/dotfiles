@@ -43,7 +43,7 @@
 [status]
 	showStash = true
 [submodule]
-    recurse = true
+    #recurse = true
 [url "git@github.com:sandsmark/"]
     insteadOf = github:
 [url "git@github.com:"]
