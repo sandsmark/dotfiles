@@ -7,6 +7,10 @@
 # need to allow access to wifi
 net wlan0
 
+# Stuff that uses openblas during build (e. g. mathy python stuff) needs mbind,
+# and it's not possible to disable without rebuilding openblas.
+seccomp !mbind
+
 # netlink because mono build stuff needs it
 protocol unix,inet,inet6,netlink
 
