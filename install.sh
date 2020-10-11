@@ -23,6 +23,11 @@ for file in picom.conf; do
     ln -s $PWD/$file ~/.config/$file;
 done
 
+# i3 is special
+rm -f ~/.config/i3/config
+mkdir -p ~/.config/i3/
+ln -s "$PWD"/i3-config ~/.config/i3/config
+
 # vim tmp dir and plugins
 mkdir -p ~/.vim/tmp/
 mkdir -p ~/.vim/plugin/

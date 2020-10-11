@@ -1,0 +1,243 @@
+# Windows key for everything (in i3)
+set $mod Mod4
+
+# Font for everything
+font pango:DejaVu Sans Mono, Icons 7
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Start a terminal
+# kdeinit5_wrapper makes it launch much faster (at least until d_ed
+# started messing with kinit, todo: write my own kinit replacement).
+bindsym $mod+Return exec kdeinit5_wrapper konsole
+
+# Kill focused window
+bindsym $mod+Shift+k kill
+
+# Jump to urgent
+bindsym $mod+x [urgent=latest] focus
+
+# dmenu launcher
+bindsym $mod+d exec dmenu_run -i -nb "#000" -nf "#fff" -fn "-*-dejavu sans mono-medium-r-*-*-*-*-*-*-*-*-*-*"
+
+# Lock shortcut (screensaver activate, catched by xss-lock)
+bindsym Mod1+Control+l exec --no-startup-id xset s activate
+
+# Shortcuts for adjusting brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 33
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 33
+
+# Shortcuts for adjusting volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 33
+bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 33
+bindsym XF86AudioMute exec --no-startup-id pamixer -t
+
+# Change focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move windows
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Horizontal split
+bindsym $mod+Shift+h split h
+# Vertical split
+bindsym $mod+Shift+v split v
+
+# Force window fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Focus the parent container
+bindsym $mod+a focus parent
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+s restart
+
+# Switch to workspace
+bindsym $mod+1 workspace 1 web
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3 edit
+bindsym $mod+4 workspace 4 git
+bindsym $mod+5 workspace 5 dolphin
+bindsym $mod+6 workspace 6 video
+bindsym $mod+7 workspace 7 music
+bindsym $mod+8 workspace 8 logs
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+bindsym $mod+q workspace 11 doc
+bindsym $mod+w workspace 12 w
+bindsym $mod+e workspace 13 e
+bindsym $mod+r workspace 14 monitoring
+bindsym $mod+t workspace 15 sound
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1 web
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3 edit
+bindsym $mod+Shift+4 move container to workspace 4 git
+bindsym $mod+Shift+5 move container to workspace 5 dolphin
+bindsym $mod+Shift+6 move container to workspace 6 video
+bindsym $mod+Shift+7 move container to workspace 7 music
+bindsym $mod+Shift+8 move container to workspace 8 logs
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+q move container to workspace 11 doc
+bindsym $mod+Shift+w move container to workspace 12 w
+bindsym $mod+Shift+e move container to workspace 13 e
+bindsym $mod+Shift+r move container to workspace 14 monitoring
+bindsym $mod+Shift+t move container to workspace 15 sound
+
+# Fun fact: in Qt you can set the instance by either passing -name foo to the
+# app, or setting the RESOURCE_NAME environment variable before starting the
+# application. So this allows us to magically assign the right desktop without
+# having to hardcode everything.
+assign [instance=".*Desktop 1"] 1 web
+assign [instance=".*Desktop 2"] 2
+assign [instance=".*Desktop 3"] 3 edit
+assign [instance=".*Desktop 4"] 4 git
+assign [instance=".*Desktop 5"] 5 dolphin
+assign [instance=".*Desktop 6"] 6 video
+assign [instance=".*Desktop 7"] 7 music
+assign [instance=".*Desktop 8"] 8 logs
+assign [instance=".*Desktop 9"] 9
+assign [instance=".*Desktop 10"] 10
+assign [instance=".*Desktop 11"] 11 doc
+assign [instance=".*Desktop 12"] 12 w
+assign [instance=".*Desktop 13"] 13 e
+assign [instance=".*Desktop 14"] 14 monitoring
+assign [instance=".*Desktop 15"] 15 sound
+
+# But for non-qt apps we can't do that and have to hardcode
+assign [class="Pavucontrol"] 15 sound
+for_window [class="Spotify"] move container to workspace 7 music
+
+## Floating windows
+# So many, but I3 won't merge support for having the list outside of the
+# normal config file
+
+# Media players
+for_window [instance="gl"] floating enable # e. g. mpv
+for_window [class="mpv"] floating enable # but mpv doesn't always have instance = gl
+for_window [class="vlc"] floating enable
+for_window [class="Simplescreenrecorder"] floating enable
+
+# Mostly games, but wine stuff doesn't like being tiled in general
+# And god forbid that Wine set e. g. the class to wine or something.
+for_window [class=".*\.EXE"] floating enable # Yes, I know (?i) makes it case insensitive, but it's hard to remember
+for_window [class=".*\.exe"] floating enable # It's easier to just copy the line
+for_window [instance=".*\.EXE"] floating enable
+for_window [instance=".*\.exe"] floating enable
+for_window [title=".*\.EXE"] floating enable
+for_window [title=".*\.exe"] floating enable
+for_window [class="Wine"] floating enable
+
+# Other games
+for_window [class="Turn On Me"] floating enable
+for_window [class="freeaoe"] floating enable
+for_window [class="freeaoe"] move position center
+for_window [class="fizmo-sdl2"] floating enable
+for_window [class="mame"] floating enable
+for_window [class="BORG"] floating enable
+for_window [class="Ghostly"] floating enable
+
+# Emulators
+for_window [class="palm64"] floating enable
+for_window [class="qemu-system-x86_64"] floating enable
+for_window [class="VirtualBox"] floating enable
+
+# Image/document viewer
+for_window [class="feh"] floating enable
+for_window [class="MuPDF"] floating enable
+for_window [class="Image Lounge"] floating enable
+for_window [class="DiffImg"] floating enable
+for_window [class="kuickshow"] floating enable
+for_window [class="gwenview"] floating enable
+for_window [class="Display"] floating enable
+for_window [class="Inkscape"] floating enable
+for_window [class="vsedit"] floating enable
+for_window [class="scpreader"] floating enable
+
+# (Semi-) broken stuff
+for_window [class="[Cc]inelerra"] floating enable
+for_window [class="Matplotlib"] floating enable
+for_window [title=".* — Krusader"] floating enable # It has broken popups
+
+# Work
+for_window [class="remarkable-desktop"] floating enable
+for_window [class="xochitl"] floating enable
+
+# Broken apps, float by default because they are broken
+for_window [title="^$"] floating enable
+
+
+### Launch config
+#
+# Start i3bar to display a workspace bar with status thing
+bar {
+    status_command status # the executable is named status.
+    colors {
+        background #000000
+            statusline #ffffff
+            separator #666666
+            focused_workspace  #000000 #000000 #ffffff
+            active_workspace   #333333 #5f676a #ffffff
+            inactive_workspace #000000 #000000 #666666
+            urgent_workspace   #666666 #666666 #000000
+    }
+}
+
+hide_edge_borders both
+default_border none
+focus_on_window_activation urgent
+
+# start stuff
+exec --no-startup-id compton
+exec --no-startup-id /usr/local/bin/pastenotifier
+exec --no-startup-id xrdb -merge ~/.Xdefaults
+
+# Keyboard
+exec --no-startup-id setxkbmap -layout us -variant altgr-intl -option compose:rctrl -option ctrl:nocaps #meh:  -option altwin:swap_lalt_lwin
+exec --no-startup-id xset r rate 220 50
+exec --no-startup-id xset dpms 600
+exec --no-startup-id xset -b
+
+# Launcher
+exec --no-startup-id mangonel
+
+# Notifications
+exec --no-startup-id sandsmark-notificationd
+
+# Hide cursor automatically
+exec --no-startup-id unclutter
+
+# todo app
+exec --no-startup-id martin-todo
+
+# Allow me to run graphical apps as root
+exec --no-startup-id xhost +local:
+
+# Backlight to 100% by defuault
+exec --no-startup-id light -S 100
+# Minimum 1% backlight
+exec --no-startup-id light -N 1
+
+# Random gray background
+exec --no-startup-id hsetroot -solid "#272822"
+
+# Lock on suspend (todo: replace with my own, xss-lock is a bit crap)
+exec --no-startup-id xss-lock -l -- i3lock -c 000000 -f -i /home/sandsmark/Downloads/haskal.png
+
