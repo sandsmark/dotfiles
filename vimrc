@@ -63,6 +63,7 @@ set shiftwidth=4
 set hlsearch            " highlight last search
 set smartcase           " search good
 set ignorecase          " ignore case by default
+set scrolloff=5         " show some context around the search result
 
 " latex-suite wants grep to always generate a file-name.
 set grepprg=grep\ -nH\ $*
