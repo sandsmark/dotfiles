@@ -29,3 +29,4 @@ leak:QListData::detach_grow
 leak:QtSharedPointer::ExternalRefCountData::getAndRef
 leak:libQt5Quick.so.5+0x1839aa
 leak:libfreetype.so.6
+leak:libnvidia-glcore
