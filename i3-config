@@ -221,7 +221,14 @@ exec --no-startup-id xrdb -merge ~/.Xdefaults
 # Keyboard
 exec --no-startup-id setxkbmap -layout us -variant altgr-intl -option compose:rctrl -option ctrl:nocaps #meh:  -option altwin:swap_lalt_lwin
 exec --no-startup-id xset r rate 220 50
+#exec --no-startup-id xmodmap -e "keycode 166 = Prior"
+#exec --no-startup-id xmodmap -e "keycode 167 = Next"
+exec --no-startup-id xinput set-prop 'Unicomp  Endura Pro Keyboard  Mouse' 'libinput Middle Emulation Enabled' 1
+exec --no-startup-id xinput set-prop 'Unicomp  Endura Pro Keyboard  Mouse' 'libinput Scroll Method Enabled' 0 0 1
+
+# 10 minutes to standby (default values for suspend and off)
 exec --no-startup-id xset dpms 600
+# No bell
 exec --no-startup-id xset -b
 
 # Launcher
