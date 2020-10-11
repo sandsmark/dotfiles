@@ -1,11 +1,12 @@
 # Firejail profile for makepkg
 # Not really for security, mostly just to avoid badly written build systems
-# (mono shit, python, etc.) from crapping up my "global" setup/home folder
-# Hence why this is mostly just disabling a lot of the default firejail makepkg
-# config.
+# (nuget, pip, etc.) from crapping up my "global" setup/home folder
 
 # need to allow access to wifi
 net wlan0
+
+# In theory not my local net, but in case I get the distcc patch merged so I can use it
+#netfilter /etc/firejail/nolocal.net
 
 # Stuff that uses openblas during build (e. g. mathy python stuff) needs mbind,
 # and it's not possible to disable without rebuilding openblas.
@@ -27,15 +28,62 @@ read-only ${HOME}/.gnupg/pubring.gpg
 whitelist ${HOME}/.ccache
 
 # mono nuget shit
-whitelist ${HOME}/.nuget
-whitelist ${HOME}/.config/NuGet
+#whitelist ${HOME}/.nuget
+#whitelist ${HOME}/.config/NuGet
 
 # don't allow X11 connections
 x11 none
 blacklist ${HOME}/.Xauthority
 
+noautopulse
+nodbus
+nou2f
+
 # These break some configure checks in some packages
 ignore memory-deny-write-execute
 ignore noexec ${HOME}
 ignore noexec /tmp
+
+###########
+## Block everything in / by default, make the rest read-only, which is handled
+## elsewhere.
+
+noblacklist /dev
+noblacklist /dev/fd/*
+noblacklist /dev/null
+noblacklist /dev/zero
+noblacklist /dev/urandom
+noblacklist /etc
+read-only /etc
+noblacklist /home
+noblacklist /lib
+read-only /lib
+noblacklist /lib64
+read-only /lib64
+noblacklist /mnt
+read-only /mnt
+noblacklist /proc
+read-only /proc
+noblacklist /root
+noblacklist /run
+noblacklist /tmp
+noblacklist /usr
+read-only /usr
+noblacklist /var
+read-only /var/
+
+# These I know are blacklisted, might need to unblacklist
+#noblacklist /bin
+#noblacklist /boot
+#noblacklist /lost+found
+#noblacklist /media
+#noblacklist /opt
+#noblacklist /sbin
+#noblacklist /srv
+#noblacklist /sys
+
+# Now block everything else that we don't know about
+blacklist /*
+
+#####
 

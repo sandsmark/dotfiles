@@ -160,6 +160,22 @@ function mac-vendor {
 
 }
 
+function mkpkg {
+    /usr/bin/makepkg -os
+    firejail --profile=makepkg-nonet /usr/bin/makepkg -e
+}
+
+function depinst {
+    mkpkg
+    /usr/bin/makepkg -ei --asdeps
+}
+
+function pkginst {
+    mkpkg
+    /usr/bin/makepkg -ei
+}
+
+
 function vim {
     # Handle filename:linenumber
     if [[ "$@" =~ (.*):([0-9]+) ]]; then

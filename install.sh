@@ -33,7 +33,7 @@ done
 
 # firejail sandboxing config
 mkdir -p ~/.config/firejail/
-for file in makepkg.local; do
+for file in makepkg.local makepkg-nonet.profile; do
     rm -f ~/.config/firejail/"$file";
     ln -s "$PWD/$file" ~/.config/firejail/"$file";
 done
