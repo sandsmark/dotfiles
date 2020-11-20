@@ -135,6 +135,7 @@ for_window [class="mpv"] floating enable # but mpv doesn't always have instance 
 for_window [class="vlc"] floating enable
 for_window [class="Simplescreenrecorder"] floating enable
 for_window [title="MPlayer"] floating enable
+for_window [class="aktion"] floating enable
 
 # Mostly games, but wine stuff doesn't like being tiled in general
 # And god forbid that Wine set e. g. the class to wine or something.
@@ -160,6 +161,7 @@ for_window [class="ShadowOfMordor"] floating enable
 for_window [class="palm64"] floating enable
 for_window [class="qemu-system-x86_64"] floating enable
 for_window [class="VirtualBox"] floating enable
+for_window [class="XDosEmu"] floating enable
 
 # KDE 1
 for_window [title="skcm:.*"] floating enable
@@ -172,8 +174,9 @@ for_window [class="feh"] floating enable
 for_window [class="MuPDF"] floating enable
 for_window [class="Image Lounge"] floating enable
 for_window [class="DiffImg"] floating enable
-for_window [class="kuickshow"] floating enable
+for_window [instance="kuickshow"] floating enable
 for_window [class="gwenview"] floating enable
+for_window [class="PhotoQt"] floating enable
 for_window [class="Display"] floating enable
 for_window [class="Inkscape"] floating enable
 for_window [class="vsedit"] floating enable
