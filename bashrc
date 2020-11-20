@@ -160,18 +160,15 @@ function mac-vendor {
 }
 
 function mkpkg {
-    /usr/bin/makepkg -os
-    firejail --profile=makepkg-nonet /usr/bin/makepkg -e
+    /usr/bin/makepkg --verifysource --syncdeps && firejail --profile=makepkg-nonet /usr/bin/makepkg --nobuild && firejail --profile=makepkg-nonet /usr/bin/makepkg -e --noarchive
 }
 
 function depinst {
-    mkpkg
-    /usr/bin/makepkg -ei --asdeps
+    mkpkg && /usr/bin/makepkg -Ri --asdeps
 }
 
 function pkginst {
-    mkpkg
-    /usr/bin/makepkg -ei
+    mkpkg && /usr/bin/makepkg -Ri
 }
 
 
