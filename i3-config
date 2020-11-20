@@ -105,7 +105,7 @@ bindsym $mod+Shift+t move container to workspace 15 sound
 # app, or setting the RESOURCE_NAME environment variable before starting the
 # application. So this allows us to magically assign the right desktop without
 # having to hardcode everything.
-assign [instance=".*Desktop 1"] 1 web
+assign [instance=".*Desktop 1$"] 1 web
 assign [instance=".*Desktop 2"] 2
 assign [instance=".*Desktop 3"] 3 edit
 assign [instance=".*Desktop 4"] 4 git
