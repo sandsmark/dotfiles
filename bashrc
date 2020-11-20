@@ -22,7 +22,6 @@ declare -x LS_COLORS='no=01;37:fi=01;37:di=01;34:ln=01;36:pi=01;32:so=01;35:do=0
 declare -x PAGER='less'
 
 declare -x EDITOR='vim'
-declare -x TERM='xterm-256color'
 
 declare -x VISUAL="${EDITOR}"
 declare -x FCEDIT="${EDITOR}"
