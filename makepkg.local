@@ -71,6 +71,8 @@ noblacklist /usr
 read-only /usr
 noblacklist /var
 read-only /var/
+noblacklist /opt
+read-only /opt
 
 # These I know are blacklisted, might need to unblacklist
 #noblacklist /bin
