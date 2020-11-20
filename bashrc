@@ -187,7 +187,7 @@ function vim {
 
     # We don't handle more than one file below
     if [[ "$#" -ne "1" ]]; then
-        /usr/bin/vim $@
+        /usr/bin/vim "$@"
         return $?
     fi
 
@@ -202,7 +202,7 @@ function vim {
         fi
     fi
 
-    /usr/bin/vim $@
+    /usr/bin/vim "$@"
     return $?
 }
 
