@@ -105,21 +105,21 @@ bindsym $mod+Shift+t move container to workspace 15 sound
 # app, or setting the RESOURCE_NAME environment variable before starting the
 # application. So this allows us to magically assign the right desktop without
 # having to hardcode everything.
-assign [instance=".*Desktop 1$"] 1 web
-assign [instance=".*Desktop 2"] 2
-assign [instance=".*Desktop 3"] 3 edit
-assign [instance=".*Desktop 4"] 4 git
-assign [instance=".*Desktop 5"] 5 dolphin
-assign [instance=".*Desktop 6"] 6 video
-assign [instance=".*Desktop 7"] 7 music
-assign [instance=".*Desktop 8"] 8 logs
-assign [instance=".*Desktop 9"] 9
-assign [instance=".*Desktop 10"] 10
-assign [instance=".*Desktop 11"] 11 doc
-assign [instance=".*Desktop 12"] 12 w
-assign [instance=".*Desktop 13"] 13 e
-assign [instance=".*Desktop 14"] 14 monitoring
-assign [instance=".*Desktop 15"] 15 sound
+assign [instance="^Desktop 1$"] 1 web
+assign [instance="^Desktop 2$"] 2
+assign [instance="^Desktop 3$"] 3 edit
+assign [instance="^Desktop 4$"] 4 git
+assign [instance="^Desktop 5$"] 5 dolphin
+assign [instance="^Desktop 6$"] 6 video
+assign [instance="^Desktop 7$"] 7 music
+assign [instance="^Desktop 8$"] 8 logs
+assign [instance="^Desktop 9$"] 9
+assign [instance="^Desktop 10"] 10
+assign [instance="^Desktop 11"] 11 doc
+assign [instance="^Desktop 12"] 12 w
+assign [instance="^Desktop 13"] 13 e
+assign [instance="^Desktop 14"] 14 monitoring
+assign [instance="^Desktop 15"] 15 sound
 
 # But for non-qt apps we can't do that and have to hardcode
 assign [class="Pavucontrol"] 15 sound
