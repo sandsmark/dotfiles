@@ -143,8 +143,6 @@ for_window [class=".*\.EXE"] floating enable # Yes, I know (?i) makes it case in
 for_window [class=".*\.exe"] floating enable # It's easier to just copy the line
 for_window [instance=".*\.EXE"] floating enable
 for_window [instance=".*\.exe"] floating enable
-for_window [title=".*\.EXE"] floating enable
-for_window [title=".*\.exe"] floating enable
 for_window [class="Wine"] floating enable
 
 # Other games
