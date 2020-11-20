@@ -160,6 +160,7 @@ for_window [class="palm64"] floating enable
 for_window [class="qemu-system-x86_64"] floating enable
 for_window [class="VirtualBox"] floating enable
 for_window [class="XDosEmu"] floating enable
+for_window [class="Snes9x-gtk"] floating enable
 
 # KDE 1
 for_window [title="skcm:.*"] floating enable
