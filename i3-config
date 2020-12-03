@@ -167,6 +167,7 @@ for_window [title="skcm:.*"] floating enable
 for_window [class="kview"] floating enable
 for_window [class="kphotoalbum"] floating enable
 for_window [instance="klipper"] floating enable
+for_window [class="vm"] floating enable
 
 # Image/document viewer
 for_window [class="feh"] floating enable
