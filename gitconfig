@@ -17,6 +17,7 @@
     colorMoved = true
     colorMovedWS = ignore-all-space
     compactionHeuristic = true
+    noprefix = true
 #[filter "lfs"]
 #	process = git-lfs filter-process
 #	required = true
@@ -37,6 +38,7 @@
 [alias]
     wdiff = diff --color-words
     owner = shortlog -s -n --all --no-merges
+    pdiff = diff --src-prefix=a/ --dst-prefix=b/
 [http]
     cookiefile = ~/.gitcookies
 [blame]
