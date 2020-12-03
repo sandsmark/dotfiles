@@ -161,15 +161,15 @@ function mac-vendor {
 }
 
 function mkpkg {
-    /usr/bin/makepkg --verifysource --syncdeps && firejail --profile=makepkg-nonet /usr/bin/makepkg --nobuild && firejail --profile=makepkg-nonet /usr/bin/makepkg -e --noarchive
+    ionice nice -n 19 /usr/bin/makepkg --verifysource --syncdeps && ionice firejail --profile=makepkg-nonet /usr/bin/makepkg --nobuild && ionice firejail --profile=makepkg-nonet /usr/bin/makepkg -e --noarchive
 }
 
 function depinst {
-    mkpkg && /usr/bin/makepkg -Ri --asdeps
+    mkpkg && ionice nice -n 19 /usr/bin/makepkg -Ri --asdeps
 }
 
 function pkginst {
-    mkpkg && /usr/bin/makepkg -Ri
+    mkpkg && ionice nice -n 19 /usr/bin/makepkg -Ri
 }
 
 
