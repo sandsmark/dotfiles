@@ -128,7 +128,8 @@ function ..    { cd ..; }
 function l    { ls --group-directories-first --color=auto -Fq  $@; }
 function ll    { ls --group-directories-first --color=auto -Fql $@; }
 
-function make    { ionice nice make $@; }
+# --ignore = continue even if failing to set iopri
+function make    { ionice --ignore --class 3 nice make $@; }
 
 function find  { stderred find "$@"; }
 function ff    { find . -name $@; }
@@ -161,15 +162,19 @@ function mac-vendor {
 }
 
 function mkpkg {
-    ionice nice -n 19 /usr/bin/makepkg --verifysource --syncdeps && ionice firejail --profile=makepkg-nonet /usr/bin/makepkg --nobuild && ionice firejail --profile=makepkg-nonet /usr/bin/makepkg -e --noarchive
+    ionice --ignore --class 3 nice -n 19 /usr/bin/makepkg --verifysource --syncdeps && \
+        ionice --ignore --class 3 firejail --profile=makepkg-nonet /usr/bin/makepkg --nobuild && \
+        ionice --ignore --class 3 firejail --profile=makepkg-nonet /usr/bin/makepkg -e --noarchive
 }
 
 function depinst {
-    mkpkg && ionice nice -n 19 /usr/bin/makepkg -Ri --asdeps
+    mkpkg && \
+        ionice --ignore --class 3 nice -n 19 /usr/bin/makepkg -Ri --asdeps
 }
 
 function pkginst {
-    mkpkg && ionice nice -n 19 /usr/bin/makepkg -Ri
+    mkpkg && \
+        ionice --ignore --class 3 nice -n 19 /usr/bin/makepkg -Ri
 }
 
 function git-owner {
