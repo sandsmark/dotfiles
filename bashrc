@@ -172,6 +172,10 @@ function pkginst {
     mkpkg && ionice nice -n 19 /usr/bin/makepkg -Ri
 }
 
+function git-owner {
+    git blame -w -M -C -C --line-porcelain "$1" | grep '^author ' | sort -f | uniq -ic | sort -h
+}
+
 
 function vim {
     # Handle filename:linenumber

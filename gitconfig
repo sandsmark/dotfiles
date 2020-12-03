@@ -36,6 +36,7 @@
     stat = true
 [alias]
     wdiff = diff --color-words
+    owner = shortlog -s -n --all --no-merges
 [http]
     cookiefile = ~/.gitcookies
 [blame]
