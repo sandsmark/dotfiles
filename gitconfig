@@ -1,3 +1,9 @@
+[alias]
+    wdiff = diff --color-words
+    owner = shortlog -s -n --all --no-merges
+    pdiff = diff --src-prefix=a/ --dst-prefix=b/
+[blame]
+    date = relative
 [branch]
     sort = -authordate
 [color]
@@ -18,6 +24,8 @@
     colorMovedWS = ignore-all-space
     compactionHeuristic = true
     noprefix = true
+[http]
+    cookiefile = ~/.gitcookies
 #[filter "lfs"]
 #	process = git-lfs filter-process
 #	required = true
@@ -29,22 +37,14 @@
 [pull]
     ff = only
 [push]
-	default = tracking
+    default = tracking
+[rebase]
+    stat = true
 [rerere]
     enabled = true
     autoupdate = true
-[rebase]
-    stat = true
-[alias]
-    wdiff = diff --color-words
-    owner = shortlog -s -n --all --no-merges
-    pdiff = diff --src-prefix=a/ --dst-prefix=b/
-[http]
-    cookiefile = ~/.gitcookies
-[blame]
-    date = relative
 [status]
-	showStash = true
+    showStash = true
 [submodule]
     #recurse = true
 [url "git@github.com:sandsmark/"]
