@@ -10,6 +10,9 @@ Control-w: unix-filename-rubout
 #Control-n: dump-functions
 #Meta-Rubout: unix-word-rubout
 
+# Delete arguments with ctrl+p
+"\C-p": shell-backward-kill-word
+
 set meta-flag on
 set input-meta on
 set convert-meta off
