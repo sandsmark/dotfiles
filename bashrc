@@ -54,6 +54,8 @@ declare -x QTC_HELPVIEWER_BACKEND=textbrowser
 
 declare -x QTKEYCHAIN_BACKEND=kwallet5
 
+# Surprisingly, GTK is shit!
+declare -x GTK_IM_MODULE=xim
 
 declare -x LSAN_OPTIONS=suppressions=${HOME}/.lsan.suppressions
 
