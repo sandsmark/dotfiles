@@ -62,5 +62,7 @@
   <Action shortcut="" name="clone-tab"/>
   <Action shortcut="" name="close-other-views"/>
   <Action shortcut="" name="help_contents"/>
+  <Action shortcut="" name="last-used-tab"/>
+  <Action shortcut="" name="last-used-tab-reverse"/>
  </ActionProperties>
 </kpartgui>
