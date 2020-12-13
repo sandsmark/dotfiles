@@ -1,23 +1,23 @@
 [Background]
-Color=49,54,59
+Color=29,32,35
 MaxRandomHue=0
 MaxRandomSaturation=0
 MaxRandomValue=0
 
 [BackgroundFaint]
-Color=49,54,59
+Color=117,129,141
 
 [BackgroundIntense]
-Color=35,38,41
+Color=98,107,115
 
 [Color0]
 Color=7,54,66
 
 [Color0Faint]
-Color=32,43,54
+Color=73,99,124
 
 [Color0Intense]
-Color=0,43,54
+Color=0,93,116
 
 [Color1]
 Color=237,21,21
@@ -62,7 +62,7 @@ Color=155,89,182
 Color=97,74,115
 
 [Color5Intense]
-Color=142,68,173
+Color=181,87,221
 
 [Color6]
 Color=26,188,156
@@ -71,7 +71,7 @@ Color=26,188,156
 Color=24,108,96
 
 [Color6Intense]
-Color=13,101,83
+Color=22,160,133
 
 [Color7]
 Color=239,240,241
@@ -92,6 +92,8 @@ Color=220,230,231
 Color=252,252,252
 
 [General]
-Description=Breeze
+Blur=false
+ColorRandomization=false
+Description=My Breeze
 Opacity=1
 Wallpaper=
