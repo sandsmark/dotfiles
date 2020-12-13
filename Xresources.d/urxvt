@@ -5,7 +5,7 @@ URxvt.scrollstyle: plain
 !URxvt*font: urxvt*font: xft:DejaVu Sans Mono:size=10
 !URxvt*font:    -*-montecarlo-medium-r-normal-*-11-*-*-*-*-*-*-*
 !URxvt*boldFont: -*-montecarlo-bold-r-normal-*-11-*-*-*-*-*-*-*
-URxvt.font: xft:DejaVuSansMono:size=8
+URxvt.font: xft:DejaVuSansMono:size=9
 !URxvt.font: -*-dejavu sans mono-medium-r-*-*-*-*-*-*-*-*-*-*
 
 ! Black
