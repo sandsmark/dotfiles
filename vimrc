@@ -90,6 +90,15 @@ let spell_language_list = "norsk,english"
 " Redraw screen and clear search highlight
 nnoremap <silent> <C-l> :nohl<CR><C-l>
 
+" Ctrl+tab navigation for tabs, like in all other application
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-T>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+
 "" Change directory to the directory of the file I'm working on.
 "autocmd BufEnter * 
 "	    \ if isdirectory( '%:p:h' ) |
