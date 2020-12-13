@@ -46,6 +46,12 @@ for file in makepkg.local makepkg-nonet.profile; do
     ln -s "$PWD/$file" ~/.config/firejail/"$file";
 done
 
+rm -rf ~/.local/share/kxmlgui5/konsole
+ln -s "$PWD/kxmlgui5/konsole" ~/.local/share/kxmlgui5/
+
+rm -rf ~/.local/share/konsole
+ln -s "$PWD/konsole" ~/.local/share/
+
 
 ## Setup for stuff
 
