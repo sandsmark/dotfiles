@@ -218,7 +218,7 @@ focus_on_window_activation urgent
 
 # start stuff
 exec --no-startup-id picom
-exec --no-startup-id /usr/local/bin/pastenotifier
+exec --no-startup-id pastenotifier
 exec --no-startup-id xrdb -merge ~/.Xdefaults
 
 # Keyboard
