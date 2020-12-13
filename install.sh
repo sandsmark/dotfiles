@@ -2,8 +2,11 @@
 
 ## Install files
 
+# It's a folder, so clean it up manually first
+rm -rf ~/.Xresources.d
+
 # normal dot files in ~
-for file in vimrc bashrc gitconfig gitexcludes muttrc bcrc lsan.suppressions offlineimaprc lesskey inputrc; do
+for file in vimrc bashrc gitconfig gitexcludes muttrc bcrc lsan.suppressions offlineimaprc lesskey inputrc Xdefaults Xresources.d; do
     rm -f ~/.$file
     ln -s $PWD/$file ~/.$file;
 done
@@ -51,3 +54,6 @@ touch ~/.bash_history
 
 # Update config in ~/.less from ~/.lesskey
 lesskey
+
+# Update X resorce database
+xrdb  ~/.Xdefaults
