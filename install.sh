@@ -4,6 +4,8 @@
 
 # It's a folder, so clean it up manually first
 rm -rf ~/.Xresources.d
+rm -f "$PWD/Xresources.d/xft.dpi"
+echo "Xft.dpi: $(xdpyinfo | grep dots | cut -d: -f2 | cut -dx -f1 | gawk '{ print $1; }')" > "$PWD/Xresources.d/xft.dpi"
 
 # normal dot files in ~
 for file in vimrc bashrc gitconfig gitexcludes muttrc bcrc lsan.suppressions offlineimaprc lesskey inputrc Xdefaults Xresources.d; do
