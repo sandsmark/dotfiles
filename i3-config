@@ -256,6 +256,9 @@ exec --no-startup-id light -S 100
 # Minimum 1% backlight
 exec --no-startup-id light -N 1
 
+# Hotkeys
+exec --no-startup-id hkd
+
 # Random gray background
 exec --no-startup-id hsetroot -solid "#272822"
 
