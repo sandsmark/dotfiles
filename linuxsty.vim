@@ -28,8 +28,16 @@ augroup linuxsty
 augroup END
 
 function s:LinuxConfigure()
-    let apply_style = 0
+    let l:path = "%:p"
+    while expand(l:path) != "/"
+        let l:path = l:path . ":h"
+        if filereadable(expand(l:path) . "/linuxstyle")
+            call s:LinuxCodingStyle()
+            return
+        endif
+    endwhile
 
+    let apply_style = 0
     if exists("g:linuxsty_patterns")
         let path = expand('%:p')
         for p in g:linuxsty_patterns
