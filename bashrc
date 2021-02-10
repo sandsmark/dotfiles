@@ -164,19 +164,19 @@ function mac-vendor {
 }
 
 function mkpkg {
-    ionice --ignore --class 3 nice -n 19 /usr/bin/makepkg --verifysource --syncdeps && \
-        ionice --ignore --class 3 firejail --profile=makepkg-nonet /usr/bin/makepkg --nobuild && \
-        ionice --ignore --class 3 firejail --profile=makepkg-nonet /usr/bin/makepkg -e --noarchive
+    ionice --ignore --class 3 nice -n 19 /usr/bin/makepkg --verifysource --syncdeps $@ && \
+        ionice --ignore --class 3 firejail --profile=makepkg-nonet /usr/bin/makepkg --nobuild $@ && \
+        ionice --ignore --class 3 firejail --profile=makepkg-nonet /usr/bin/makepkg -e $@
 }
 
 function depinst {
-    mkpkg && \
-        ionice --ignore --class 3 nice -n 19 /usr/bin/makepkg -Ri --asdeps
+    mkpkg $@ && \
+        ionice --ignore --class 3 nice -n 19 /usr/bin/makepkg -i --asdeps $@
 }
 
 function pkginst {
-    mkpkg && \
-        ionice --ignore --class 3 nice -n 19 /usr/bin/makepkg -Ri
+    mkpkg $@ && \
+        ionice --ignore --class 3 nice -n 19 /usr/bin/makepkg -i $@
 }
 
 function git-owner {
