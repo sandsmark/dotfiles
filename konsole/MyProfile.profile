@@ -24,6 +24,7 @@ TerminalMargin=5
 
 [Interaction Options]
 AllowEscapedLinks=false
+ColorFilterEnabled=false
 CopyTextAsHTML=false
 CtrlRequiredForDrag=true
 OpenLinksByDirectClickEnabled=false
