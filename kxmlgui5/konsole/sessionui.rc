@@ -63,7 +63,6 @@
  </Menu>
  <ActionProperties>
   <Action shortcut="Ctrl+Shift+L" name="clear-history"/>
-  <Action shortcut="Ctrl+L" name="clear-history-and-reset"/>
   <Action shortcut="" name="file_save_as"/>
   <Action shortcut="Meta+M" name="monitor-process-finish"/>
   <Action shortcut="Ctrl+Shift+O" name="open-browser"/>
