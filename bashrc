@@ -129,7 +129,6 @@ function j     { jobs -l $@; }
 function p     { ${PAGER}  $@; }
 function e     { ${EDITOR} $@; }
 
-function c     { clear; }
 function h     { history $@; }
 function hcc   { hc;c; }
 
