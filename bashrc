@@ -79,6 +79,12 @@ declare -x GRADLE_OPTS=-Dorg.gradle.daemon=false
 # Dumb stuff
 declare -x IDF_PATH=/home/sandsmark/src/esp-idf/
 
+# Dumb libreoffice defaults to gtk
+declare -x SAL_USE_VCLPLUGIN=kf5
+
+# Looks like shit, but enable by default for some fucking reason when using the kf5 plugin
+declare -x SAL_VCL_QT5_USE_CAIRO=0
+
 
 #################
 # shell variables
