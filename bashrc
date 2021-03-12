@@ -9,6 +9,10 @@
 
 umask 022
 
+declare -x GOOGLE_DEFAULT_CLIENT_ID=77185425430.apps.googleusercontent.com
+declare -x GOOGLE_DEFAULT_CLIENT_SECRET=OTJgUOQcT7lO7GsGZq2G4IlT
+declare -x GOOGLE_API_KEY=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw
+
 ###############
 # env variables
 
