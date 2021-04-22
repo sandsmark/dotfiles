@@ -2,6 +2,7 @@
     wdiff = diff --color-words
     owner = shortlog -s -n --all --no-merges
     pdiff = diff --src-prefix=a/ --dst-prefix=b/
+    pshow = show --src-prefix=a/ --dst-prefix=b/
 [blame]
     date = relative
 [branch]
