@@ -139,12 +139,6 @@ function cd    { builtin cd "$@" && if [ "$(/usr/bin/ls -U1q | wc -l)" -lt 250 ]
 function mkcd    { mkdir "$@" && builtin cd "$@"; }
 function fix-whiteboard { convert "$@" -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 "$@.fixed.jpg"; }
 
-
-function h2d    { echo "ibase=16; $@"|bc; }
-function h2b    { echo "ibase=16;obase=2; $(echo $@ | tr [:lower:] [:upper:])" |bc; }
-function b2h    { echo "ibase=2;obase=16; $@"|bc; }
-function d2h    { echo "obase=16; $@"|bc; }
-
 function mac-vendor {
     MAC="$(echo $@ | sed 's/ //g' | sed 's/-//g' | sed 's/://g' | cut -c1-6)";
 
