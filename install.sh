@@ -65,3 +65,10 @@ lesskey
 
 # Update X resorce database
 xrdb  ~/.Xdefaults
+
+set +e
+
+# Make sure the necessary not-so-common stuff is installed
+for program in hkd firejail stderred picom pastenotifier sandsmark-notificationd unclutter light xss-lock mangonel; do
+    which "$program" >/dev/null
+done
