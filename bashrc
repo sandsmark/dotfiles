@@ -120,6 +120,7 @@ alias feh='feh -.'
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 alias ix="curl -n -F 'f:1=<-' http://ix.io"
 alias ip="ip -c"
+alias mv="mv -n"
 
 ###########
 # functions
