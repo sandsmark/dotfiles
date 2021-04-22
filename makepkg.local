@@ -2,7 +2,11 @@
 # Not really for security, mostly just to avoid badly written build systems
 # (nuget, pip, etc.) from crapping up my "global" setup/home folder
 
-# need to allow access to wifi
+# Don't use all the cpu
+nice 19
+
+# need to allow access to download stuff
+net enp0s31f6
 net wlan0
 
 # In theory not my local net, but in case I get the distcc patch merged so I can use it
@@ -88,5 +92,3 @@ read-only /opt
 blacklist /*
 
 #####
-
-nice 19
