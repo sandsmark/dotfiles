@@ -2,6 +2,8 @@
 " Society in Trondheim
 " Now mine.
 
+set nocompatible        " Use Vim defaults, not annoying vi. It resets some variables so do it first.
+
 filetype plugin indent on
 syntax on
 
@@ -9,7 +11,7 @@ let osys=system('uname -s')
 let vimdir=$HOME . '/.vim/'
 
 " Store all backup files in a central folder instead of cluttering
-let &viminfo="'20," . '%,n' . vimdir . 'viminfo'
+let &viminfo="'1000," . '%,n' . vimdir . 'viminfo'
 let &backupdir=vimdir . 'tmp'
 
 " Stop whining when setting up on a new machine
@@ -27,8 +29,7 @@ autocmd BufReadPost *
 
 set backup              " Keep a backup file
 set errorbells          " beep/flash on errors
-set history=100         " keep 100 lines of command history
-set nocompatible        " Use Vim defaults, not annoying vi
+set history=1000        " keep 1000 lines of command history (already done above with viminfo, but w/e)
 set nowrap              " fuckg wrapping
 set number              " show line numbers
 set nowarn              " I don't care
