@@ -122,30 +122,11 @@ alias ip="ip -c"
 ###########
 # functions
 
-function x     { exit    $@; }
-function z     { suspend $@; }
-function j     { jobs -l $@; }
-
-function p     { ${PAGER}  $@; }
-function e     { ${EDITOR} $@; }
-
-function h     { history $@; }
-function hcc   { hc;c; }
-
-function cx    { hc;x; }
-
-function ..    { cd ..; }
-
-function l    { ls --group-directories-first --color=auto -Fq  $@; }
-function ll    { ls --group-directories-first --color=auto -Fql $@; }
-
 # --ignore = continue even if failing to set iopri
 function make    { ionice --ignore --class 3 nice make $@; }
 
 function find  { stderred find "$@"; }
 function ff    { find . -name $@; }
-
-function dmsg  { dmesg | p; }
 
 function cd    { builtin cd "$@" && if [ "$(/usr/bin/ls -U1q | wc -l)" -lt 250 ]; then ls; fi; }
 
