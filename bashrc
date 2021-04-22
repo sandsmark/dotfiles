@@ -9,10 +9,6 @@
 
 umask 022
 
-declare -x GOOGLE_DEFAULT_CLIENT_ID=77185425430.apps.googleusercontent.com
-declare -x GOOGLE_DEFAULT_CLIENT_SECRET=OTJgUOQcT7lO7GsGZq2G4IlT
-declare -x GOOGLE_API_KEY=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw
-
 ###############
 # env variables
 
@@ -43,8 +39,11 @@ declare -x GCC_COLORS=always
 declare -x CXXFLAGS=-fdiagnostics-color=always
 declare -x CFLAGS=-fdiagnostics-color=always
 
+# Unfortunately crashes a bunch of crappy applications, like Audacity
+# But better to be reminded about how crappy it is
 declare -x MALLOC_CHECK_=1
 
+# Basically just to limit the absurd number of decimal points
 declare -x BC_ENV_ARGS=~/.bcrc
 
 #declare -x WINEARCH="win32"
@@ -72,7 +71,7 @@ fi
 
 # Java is retarded
 declare -x _JAVA_AWT_WM_NONREPARENTING=1
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+declare -x _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 # Gradle is retarded
 declare -x GRADLE_OPTS=-Dorg.gradle.daemon=false
 
@@ -85,6 +84,10 @@ declare -x SAL_USE_VCLPLUGIN=kf5
 # Looks like shit, but enable by default for some fucking reason when using the kf5 plugin
 declare -x SAL_VCL_QT5_USE_CAIRO=0
 
+# Since Google™ decided to restrict the chromium keys, use the Chrome™ ones
+declare -x GOOGLE_DEFAULT_CLIENT_ID=77185425430.apps.googleusercontent.com
+declare -x GOOGLE_DEFAULT_CLIENT_SECRET=OTJgUOQcT7lO7GsGZq2G4IlT
+declare -x GOOGLE_API_KEY=AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw
 
 #################
 # shell variables
