@@ -48,6 +48,12 @@ for file in makepkg.local makepkg-nonet.profile; do
     ln -s "$PWD/$file" ~/.config/firejail/"$file";
 done
 
+# Global keyboard shortcuts
+mkdir -p ~/.config/hkd/
+rm -f ~/.config/hkd/config
+ln -s "$PWD"/hkd-config ~/.config/hkd/config
+
+# Konsole non-config stuff
 rm -rf ~/.local/share/kxmlgui5/konsole
 ln -s "$PWD/kxmlgui5/konsole" ~/.local/share/kxmlgui5/
 

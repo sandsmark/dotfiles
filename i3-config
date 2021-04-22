@@ -24,15 +24,6 @@ bindsym $mod+d exec dmenu_run -i -nb "#000" -nf "#fff" -fn "-*-dejavu sans mono-
 # Lock shortcut (screensaver activate, catched by xss-lock)
 bindsym Mod1+Control+l exec --no-startup-id xset s activate
 
-# Shortcuts for adjusting brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id light -A 33
-bindsym XF86MonBrightnessDown exec --no-startup-id light -U 33
-
-# Shortcuts for adjusting volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 33
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 33
-bindsym XF86AudioMute exec --no-startup-id pamixer -t
-
 # Change focus
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
