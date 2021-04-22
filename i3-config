@@ -247,9 +247,6 @@ exec --no-startup-id sandsmark-notificationd
 # Hide cursor automatically
 exec --no-startup-id unclutter
 
-# todo app
-exec --no-startup-id martin-todo
-
 # Allow me to run graphical apps as root
 exec --no-startup-id xhost +local:
 
