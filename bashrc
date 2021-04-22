@@ -92,21 +92,23 @@ declare -x SAL_VCL_QT5_USE_CAIRO=0
 set -o noclobber
 set -o physical
 
-shopt -s cdspell
-shopt -s extglob
-shopt -s dotglob
-shopt -s cmdhist
-shopt -s lithist
-shopt -s progcomp
-shopt -s checkhash
-shopt -s histreedit
-shopt -s histappend
-shopt -s promptvars
-shopt -s cdable_vars
-shopt -s checkwinsize
-shopt -s hostcomplete
-shopt -s expand_aliases
-shopt -s interactive_comments
+shopt -s cdspell        # Correct minor spelling mistakes in cd
+shopt -s extglob        # Use extended glob expansion, ?(), *(), etc.
+shopt -s dotglob        # Include . prefixed files in glob expansion
+shopt -s cmdhist        # Join multi-line commands in the history
+shopt -u lithist        # Replace newlines with ; in history
+shopt -s progcomp       # Enable extra non-builtin completions
+shopt -s checkhash      # Look up commands in hash table before falling back to path search
+shopt -s histreedit     # Allow editing failed history search
+shopt -s histappend     # Don't overwrite history
+shopt -s promptvars     # Enable variable expansion in prompts
+shopt -s cdable_vars    # Assume arguments to cd are variables if they aren't a dir
+shopt -s hostcomplete   # Attempt to expand hostnames when completing words with @
+shopt -s expand_aliases # Use aliases
+shopt -s interactive_comments # Ignore comments in interactive shells
+
+#  Update LINES and COLUMNS variables after commands complete
+[[ $DISPLAY ]] && shopt -s checkwinsize
 
 #########
 # aliases
