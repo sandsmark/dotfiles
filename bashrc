@@ -57,8 +57,11 @@ declare -x QTC_HELPVIEWER_BACKEND=textbrowser
 
 declare -x QTKEYCHAIN_BACKEND=kwallet5
 
-# Surprisingly, GTK is shit!
-declare -x GTK_IM_MODULE=xim
+## Surprisingly, GTK is shit!
+## Unsurprisingly, wxWidgets is even shittier, and breaks if we use xim. So we
+## can't get proper compose sequences in GTK apps at all.
+## Yay.
+# declare -x GTK_IM_MODULE=xim
 
 declare -x LSAN_OPTIONS=suppressions=${HOME}/.lsan.suppressions
 
