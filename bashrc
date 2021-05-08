@@ -156,6 +156,13 @@ function mac-vendor {
 
 }
 
+# Rust is a fucking clustertrainfuck
+function makepkgjail_net {
+    printf '\033[33;5m\nRUNNING UNPROTECTED\n\n\033[00m'
+    supernice firejail --profile=makepkg /usr/bin/makepkg $@ || return 1
+    printf '\033[33;5m!!!!!!\nREMEMBER TO ENSURE THE RUST CRAP IS JAILED!\n!!!!!!\n\n\033[00m'
+}
+
 function supernice {
     ionice --ignore --class 3 nice -n 19 $@ || return 1
 }
