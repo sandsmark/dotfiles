@@ -187,6 +187,9 @@ for_window [title=".* — Krusader"] floating enable # It has broken popups
 for_window [class="remarkable-desktop"] floating enable
 for_window [class="xochitl"] floating enable
 
+# Other
+for_window [class="8bit-programmer"] floating enable
+
 # Broken apps, float by default because they are broken
 for_window [title="^$"] floating enable
 
