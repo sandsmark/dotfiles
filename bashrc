@@ -156,20 +156,41 @@ function mac-vendor {
 
 }
 
-function mkpkg {
-    ionice --ignore --class 3 nice -n 19 firejail  --net=wlan0 --profile=makepkg env -i /usr/bin/makepkg --noprepare --verifysource --syncdeps $@ && \
-        ionice --ignore --class 3 firejail --profile=makepkg-nonet env -i /usr/bin/makepkg --holdver --nobuild $@ && \
-        ionice --ignore --class 3 firejail --profile=makepkg-nonet env -i /usr/bin/makepkg --holdver -e $@
+function supernice {
+    ionice --ignore --class 3 nice -n 19 $@ || return 1
+}
+
+function makepkgjail {
+    supernice firejail --profile=makepkg-nonet /usr/bin/makepkg $@ || return 1
+}
+
+function makepkg {
+    # Install deps
+    echo "Installing deps"
+    supernice /usr/bin/makepkg --noextract --syncdeps --nobuild --noprepare || return 1
+    # Download sources
+    echo "Downloading source"
+    supernice firejail --profile=makepkg /usr/bin/makepkg --verifysource || return 1
+    # Unpack the sources
+    echo "Unpacking source"
+    makepkgjail --nobuild --holdver $@ || return 1
+    # Do the actual build
+    echo "Building"
+    makepkgjail --holdver $@ || return 1
 }
 
 function depinst {
-    mkpkg $@ && \
-        ionice --ignore --class 3 nice -n 19 /usr/bin/makepkg --noprepare --holdver --noextract -i --asdeps $@
+    makepkg $@ || return 1
+    for PACKAGE in $(makepkgjail --packagelist); do
+        sudo pacman -U --asdeps "$PACKAGE"
+    done
 }
 
 function pkginst {
-    mkpkg $@ && \
-        ionice --ignore --class 3 nice -n 19 /usr/bin/makepkg  --noprepare --holdver --noextract -i $@
+    makepkg $@ || return 1
+    for PACKAGE in $(makepkgjail --packagelist); do
+        sudo pacman -U "$PACKAGE" || return 1
+    done
 }
 
 function git-owner {
