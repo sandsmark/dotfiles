@@ -204,6 +204,9 @@ function git-owner {
     git blame -w -M -C -C --line-porcelain "$1" | grep '^author ' | sort -f | uniq -ic | sort -h
 }
 
+function git-repo-owner {
+    find -type f -exec git blame -w -M -C -C --line-porcelain {} \; 2>/dev/null | grep '^author ' | sort -f | uniq -ic | sort -h
+}
 
 function vim {
     # Handle filename:linenumber
