@@ -1,7 +1,7 @@
 [Appearance]
 AntiAliasFonts=false
 BoldIntense=true
-ColorScheme=Monokai
+ColorScheme=MyBreeze
 Font=Terminus,10,-1,5,50,0,0,0,0,0
 LineSpacing=0
 UseFontLineChararacters=false
