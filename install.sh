@@ -26,7 +26,7 @@ rm -f "$HOME/.config/compton.conf"
 
 # xdg configs in ~/.config
 mkdir -p ~/.config/
-for file in picom.conf; do
+for file in picom.conf compton.conf; do
     rm -f ~/.config/$file
     ln -s $PWD/$file ~/.config/$file;
 done
@@ -78,6 +78,6 @@ xrdb  ~/.Xdefaults
 set +ex
 
 # Make sure the necessary not-so-common stuff is installed
-for program in hkd firejail stderred picom pastenotifier sandsmark-notificationd unclutter light xss-lock mangonel; do
+for program in hkd firejail stderred compton pastenotifier sandsmark-notificationd unclutter light xss-lock mangonel; do
     which "$program" >/dev/null
 done
