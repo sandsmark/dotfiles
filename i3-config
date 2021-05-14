@@ -129,6 +129,9 @@ for_window [title="MPlayer"] floating enable
 for_window [class="aktion"] floating enable
 for_window [class="EKO"] floating enable
 for_window [class="kwave"] floating enable
+for_window [class="noatun"] floating enable
+for_window [instance="noatun"] floating enable
+for_window [class="noatun"] border none
 
 # Mostly games, but wine stuff doesn't like being tiled in general
 # And god forbid that Wine set e. g. the class to wine or something.
