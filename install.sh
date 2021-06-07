@@ -78,6 +78,6 @@ xrdb  ~/.Xdefaults
 set +ex
 
 # Make sure the necessary not-so-common stuff is installed
-for program in hkd firejail stderred compton pastenotifier sandsmark-notificationd unclutter light xss-lock mangonel; do
+for program in hkd firejail stderred compton pastenotifier sandsmark-notificationd unclutter light xss-lock mangonel xcape; do
     which "$program" >/dev/null
 done
