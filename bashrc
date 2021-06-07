@@ -175,15 +175,15 @@ function makepkgjail {
 }
 
 function makepkg {
-    # Install deps
-    echo "Installing deps"
-    supernice /usr/bin/makepkg --noextract --syncdeps --nobuild --noprepare || return 1
     # Download sources
     echo "Downloading source"
     supernice firejail --profile=makepkg /usr/bin/makepkg --verifysource || return 1
     # Unpack the sources
     echo "Unpacking source"
     makepkgjail --nobuild --holdver $@ || return 1
+    # Install deps
+    echo "Installing deps"
+    supernice /usr/bin/makepkg --holdver --noextract --syncdeps --nobuild --noprepare || return 1
     # Do the actual build
     echo "Building"
     makepkgjail --holdver $@ || return 1
