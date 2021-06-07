@@ -195,6 +195,7 @@ for_window [class="8bit-programmer"] floating enable
 
 # Broken apps, float by default because they are broken
 for_window [title="^$"] floating enable
+for_window [title=".*ENSLAVED.*"] floating enable
 
 
 ### Launch config
