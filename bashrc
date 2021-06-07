@@ -113,6 +113,9 @@ shopt -s hostcomplete   # Attempt to expand hostnames when completing words with
 shopt -s expand_aliases # Use aliases
 shopt -s interactive_comments # Ignore comments in interactive shells
 
+stty werase undef
+bind '\C-w:shell-backward-kill-word'
+
 #  Update LINES and COLUMNS variables after commands complete
 [[ $DISPLAY ]] && shopt -s checkwinsize
 

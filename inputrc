@@ -6,12 +6,7 @@ set mark-symlinked-directories On
 set show-all-if-ambiguous On
 set visible-stats On
 
-Control-w: unix-filename-rubout
 #Control-n: dump-functions
-#Meta-Rubout: unix-word-rubout
-
-# Delete arguments with ctrl+p
-"\C-p": shell-backward-kill-word
 
 set meta-flag on
 set input-meta on
