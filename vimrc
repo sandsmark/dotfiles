@@ -123,6 +123,10 @@ set termencoding=utf-8
 au BufNewFile,BufRead mutt*    set tw=77 ai nocindent fileencoding=utf-8
 au BufNewFile,BufRead psql.edit.*    set tw=77 ai nocindent fileencoding=utf-8 filetype=sql
 
+" The PKGBUILD highlighting in pacman-contrib is broken, so pretend they are
+" normal shell scripts
+au BufNewFile,BufRead PKGBUILD set filetype=sh
+
 " Open multiple files in new tabs
 au VimEnter * if !&diff | tab all | tabfirst | endif
 
