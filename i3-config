@@ -192,6 +192,7 @@ for_window [class="xochitl"] floating enable
 
 # Other
 for_window [class="8bit-programmer"] floating enable
+for_window [instance="kruler"] floating enable
 
 # Broken apps, float by default because they are broken
 for_window [title="^$"] floating enable
