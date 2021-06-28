@@ -75,6 +75,9 @@ let spell_insert_mode = 0
 let spell_auto_type = "tex,mail"
 let spell_language_list = "norsk,english"
 
+" vim doesn't handle escape codes in the output very well
+set makeprg=CFLAGS=-fdiagnostics-color=never\ CXXFLAGS=-fdiagnostics-color=never\ make
+
 " F1 for help is really annoying.
 :nmap <F1> :echo<CR>
 :imap <F1> <C-o>:echo<CR>
