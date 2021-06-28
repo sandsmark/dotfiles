@@ -11,7 +11,7 @@ let osys=system('uname -s')
 let vimdir=$HOME . '/.vim/'
 
 " Store all backup files in a central folder instead of cluttering
-let &viminfo="'1000," . '%,n' . vimdir . 'viminfo'
+let &viminfo="'10000," . '%,n' . vimdir . 'viminfo'
 let &backupdir=vimdir . 'tmp'
 
 " Stop whining when setting up on a new machine
@@ -29,7 +29,7 @@ autocmd BufReadPost *
 
 set backup              " Keep a backup file
 set errorbells          " beep/flash on errors
-set history=1000        " keep 1000 lines of command history (already done above with viminfo, but w/e)
+set history=10000       " keep 10000 lines of command history (already done above with viminfo, but w/e)
 set nowrap              " fuckg wrapping
 set number              " show line numbers
 set nowarn              " I don't care
