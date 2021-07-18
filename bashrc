@@ -99,6 +99,7 @@ set -o noclobber
 set -o physical
 
 shopt -s cdspell        # Correct minor spelling mistakes in cd
+shopt -s dirspell       # Try to fix spelling when completing dirs
 shopt -s extglob        # Use extended glob expansion, ?(), *(), etc.
 shopt -s dotglob        # Include . prefixed files in glob expansion
 shopt -s cmdhist        # Join multi-line commands in the history
