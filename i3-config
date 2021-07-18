@@ -226,7 +226,6 @@ exec --no-startup-id xrdb -merge ~/.Xdefaults
 # Keyboard
 exec --no-startup-id setxkbmap -layout us -variant altgr-intl -option compose:rctrl -option ctrl:nocaps #meh:  -option altwin:swap_lalt_lwin
 exec --no-startup-id xset r rate 220 50
-exec --no-startup-id xcape # Use ctrl without any other keys as escape
 #exec --no-startup-id xmodmap -e "keycode 166 = Prior"
 #exec --no-startup-id xmodmap -e "keycode 167 = Next"
 exec --no-startup-id xinput set-prop 'Unicomp  Endura Pro Keyboard  Mouse' 'libinput Middle Emulation Enabled' 1
