@@ -1,8 +1,8 @@
 [Appearance]
-AntiAliasFonts=false
+AntiAliasFonts=true
 BoldIntense=true
 ColorScheme=MyBreeze
-Font=Terminus,10,-1,5,50,0,0,0,0,0
+Font=Monospace,10,-1,5,50,0,0,0,0,0
 LineSpacing=0
 UseFontLineChararacters=false
 
