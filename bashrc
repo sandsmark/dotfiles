@@ -148,6 +148,9 @@ function fix-whiteboard { convert "$@" -morphology Convolve DoG:15,100,0 -negate
 
 function mac-vendor {
     MAC="$(echo $@ | sed 's/ //g' | sed 's/-//g' | sed 's/://g' | cut -c1-6)";
+    if [[ -z "$MAC" ]]; then
+        return
+    fi
 
     result="$(grep -i -A 4 ^$MAC ~/oui.txt)";
 
