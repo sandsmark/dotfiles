@@ -64,9 +64,6 @@ ln -s "$PWD/konsole" ~/.local/share/
 # bash apparently needs us to do this?
 touch ~/.bash_history
 
-# Update config in ~/.less from ~/.lesskey
-lesskey
-
 # Update X resorce database
 xrdb  ~/.Xdefaults
 
