@@ -40,6 +40,7 @@ KeyBindings=default
 [Scrolling]
 HistoryMode=1
 HistorySize=500000
+ReflowLines=false
 ScrollBarPosition=0
 
 [Terminal Features]
