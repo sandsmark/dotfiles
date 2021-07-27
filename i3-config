@@ -10,7 +10,7 @@ floating_modifier $mod
 # Start a terminal
 # kdeinit5_wrapper makes it launch much faster (at least until d_ed
 # started messing with kinit, todo: write my own kinit replacement).
-bindsym $mod+Return exec kdeinit5_wrapper konsole
+bindsym $mod+Return exec launch-konsole
 
 # Kill focused window
 bindsym $mod+Shift+k kill
@@ -255,7 +255,7 @@ exec --no-startup-id light -S 100
 exec --no-startup-id light -N 1
 
 # Hotkeys
-exec --no-startup-id hkd
+exec --no-startup-id shortcut-satan
 
 # Random gray background
 exec --no-startup-id hsetroot -solid "#272822"
