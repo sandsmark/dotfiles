@@ -8,9 +8,10 @@ font pango:DejaVu Sans Mono, Icons 7
 floating_modifier $mod
 
 # Start a terminal
-# kdeinit5_wrapper makes it launch much faster (at least until d_ed
-# started messing with kinit, todo: write my own kinit replacement).
-bindsym $mod+Return exec launch-konsole
+# We use a custom tool that's very close to the original kdeinit_launcher,
+# but much faster than the current version of kinit (the Plasma developers
+# wanted some extra functionality that slowed it down significantly).
+bindsym $mod+Return exec launch-konsole # From https://github.com/sandsmark/konsole-launcher
 
 # Kill focused window
 bindsym $mod+Shift+k kill
