@@ -265,11 +265,6 @@ function vim {
     return $?
 }
 
-#############
-# completions
-
-complete -W '$(echo $(cut -d\  -f1 < ~/.ssh/known_hosts | cut -d, -f1))' mosh
-
 ########
 # prompt
 
