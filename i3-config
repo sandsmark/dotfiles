@@ -188,6 +188,8 @@ for_window [class="Inkscape"] floating enable
 for_window [class="vsedit"] floating enable
 for_window [class="scpreader"] floating enable
 for_window [class="lximage-qt"] floating enable
+for_window [class="gmic_qt"] floating enable
+for_window [class="gmic"] floating enable
 
 # (Semi-) broken stuff
 for_window [class="[Cc]inelerra"] floating enable
