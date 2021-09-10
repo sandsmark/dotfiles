@@ -173,8 +173,6 @@ function mac-vendor {
     if [ "$result" ]; then
         echo "For the MAC $1 the following information is found:"
         echo "$result"
-    else
-        echo "MAC $1 is not found in the database."
     fi
 
 }
