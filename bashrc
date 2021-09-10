@@ -103,15 +103,17 @@ shopt -s dirspell       # Try to fix spelling when completing dirs
 shopt -s extglob        # Use extended glob expansion, ?(), *(), etc.
 shopt -s dotglob        # Include . prefixed files in glob expansion
 shopt -s cmdhist        # Join multi-line commands in the history
-shopt -u lithist        # Replace newlines with ; in history
+shopt -u lithist        # Disable replace newlines with ; in history
 shopt -s progcomp       # Enable extra non-builtin completions
 shopt -s checkhash      # Look up commands in hash table before falling back to path search
+shopt -s checkjobs      # Prompt again if exiting and have about running backround tasks
 shopt -s histreedit     # Allow editing failed history search
 shopt -s histappend     # Don't overwrite history
 shopt -s promptvars     # Enable variable expansion in prompts
 shopt -s cdable_vars    # Assume arguments to cd are variables if they aren't a dir
 shopt -s hostcomplete   # Attempt to expand hostnames when completing words with @
 shopt -s expand_aliases # Use aliases
+shopt -s globstar       # Use ** for recursive matching
 shopt -s interactive_comments # Ignore comments in interactive shells
 
 stty werase undef
