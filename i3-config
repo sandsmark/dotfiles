@@ -4,6 +4,12 @@ set $mod Mod4
 # Font for everything
 font pango:DejaVu Sans Mono, Icons 7
 
+# Generic config
+hide_edge_borders both
+default_border none
+focus_on_window_activation urgent
+workspace_auto_back_and_forth yes
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -215,10 +221,6 @@ bar {
             urgent_workspace   #666666 #666666 #000000
     }
 }
-
-hide_edge_borders both
-default_border none
-focus_on_window_activation urgent
 
 # start stuff
 exec --no-startup-id compton
