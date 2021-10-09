@@ -117,6 +117,14 @@ shopt -s interactive_comments # Ignore comments in interactive shells
 stty werase undef
 bind '\C-w:shell-backward-kill-word'
 
+# Make Alt+, select the first argument, matching Alt+. for selecting the last argument
+bind '"\e,":yank-nth-arg'
+
+# Alt + {1,2,3} to select argument {1,2,3}
+bind '"\e1":yank-nth-arg 1'
+bind '"\e2":yank-nth-arg 2'
+bind '"\e3":yank-nth-arg 3'
+
 #  Update LINES and COLUMNS variables after commands complete
 [[ $DISPLAY ]] && shopt -s checkwinsize
 
