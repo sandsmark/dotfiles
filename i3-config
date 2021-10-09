@@ -131,6 +131,7 @@ for_window [class="Spotify"] move container to workspace 7 music
 for_window [instance="gl"] floating enable # e. g. mpv
 for_window [class="mpv"] floating enable # but mpv doesn't always have instance = gl
 for_window [class="vlc"] floating enable
+for_window [class="ffplay"] floating enable
 for_window [class="Simplescreenrecorder"] floating enable
 for_window [title="MPlayer"] floating enable
 for_window [class="aktion"] floating enable
