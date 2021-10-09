@@ -210,6 +210,7 @@ function makepkg {
 function depinst {
     makepkg $@ || return 1
     for PACKAGE in $(makepkgjail --packagelist); do
+        echo "Installing $PACKAGE as dependency"
         sudo pacman -U --asdeps "$PACKAGE"
     done
 }
@@ -217,6 +218,7 @@ function depinst {
 function pkginst {
     makepkg $@ || return 1
     for PACKAGE in $(makepkgjail --packagelist); do
+        echo "Installing $PACKAGE"
         sudo pacman -U "$PACKAGE" || return 1
     done
 }
