@@ -300,7 +300,21 @@ else
 fi
 
 function parse_git_branch {
-    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+    STATUS="$(git status --ignore-submodules=all -b --ahead-behind --porcelain --untracked-files=no 2> /dev/null)"
+    if [[ -z "$STATUS" ]]; then
+        return
+    fi
+
+    printf ' ('
+
+    # Doesn't handle branches that have '...' in them, but I'm too lazy to improve the regex to check for / and stuff
+    printf "$STATUS" | head -n 1 | sed -E 's,^## ([^\.]*)(\.\.\.[^ ]+)?(.*),\1\3,' |  tr -d '\n'
+
+    # If there's multiple lines it means there's a diff
+    if (( $(grep -c . <<<"$STATUS") > 1 )); then
+        printf " dirty"
+    fi
+    printf ')'
 }
 
 
@@ -310,7 +324,7 @@ else if (NF>3) print $1 "/" $2 "/.../" $NF;
 else print $1 "/.../" $NF; }
 else print $0;}'"'"')'
 
-PS1="${rgb_gray}${rgb_gray}[\t] `hostname`${rgb_usr}: ${rgb_std}${ELIDED_PATH}/${rgb_cadet}\$(parse_git_branch)${rgb_restore} "
+PS1="${rgb_gray}${rgb_gray}[\t] \h${rgb_usr}: ${rgb_std}${ELIDED_PATH}/${rgb_cadet}\$(parse_git_branch)${rgb_restore} "
 
 unset   rgb_restore   \
         rgb_black     \
