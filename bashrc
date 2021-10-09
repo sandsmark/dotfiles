@@ -180,7 +180,7 @@ function mac-vendor {
 # Rust is a fucking clustertrainfuck
 function makepkgjail_net {
     printf '\033[33;5m\nRUNNING UNPROTECTED\n\n\033[00m'
-    supernice firejail --profile=makepkg /usr/bin/makepkg $@ || return 1
+    supernice firejail --allow-debuggers --profile=makepkg /usr/bin/makepkg $@ || return 1
     printf '\033[33;5m!!!!!!\nREMEMBER TO ENSURE THE RUST CRAP IS JAILED!\n!!!!!!\n\n\033[00m'
 }
 
@@ -189,13 +189,13 @@ function supernice {
 }
 
 function makepkgjail {
-    supernice firejail --profile=makepkg-nonet /usr/bin/makepkg $@ || return 1
+    supernice firejail --allow-debuggers --profile=makepkg-nonet /usr/bin/makepkg $@ || return 1
 }
 
 function makepkg {
     # Download sources
     echo "Downloading source"
-    supernice firejail --profile=makepkg /usr/bin/makepkg --verifysource || return 1
+    supernice firejail --allow-debuggers --profile=makepkg /usr/bin/makepkg --verifysource || return 1
     # Install deps
     echo "Installing deps"
     supernice /usr/bin/makepkg --verifysource --holdver --noextract --syncdeps --nobuild --noprepare || return 1
