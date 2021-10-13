@@ -70,6 +70,6 @@ xrdb  ~/.Xdefaults
 set +ex
 
 # Make sure the necessary not-so-common stuff is installed
-for program in launch-konsole shortcut-satan firejail stderred compton pastenotifier sandsmark-notificationd unclutter light xss-lock mangonel; do
+for program in launch-konsole shortcut-satan firejail stderred compton pastenotifier sandsmark-notificationd unclutter light xss-lock mangonel qeh; do
     which "$program" >/dev/null
 done
