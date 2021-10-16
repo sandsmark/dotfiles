@@ -26,7 +26,7 @@ declare -x EDITOR='vim'
 declare -x VISUAL="${EDITOR}"
 declare -x FCEDIT="${EDITOR}"
 
-declare -x PROMPT_COMMAND='ret=$?; if [ $ret -ne 0 ] ; then echo -e "\007returned \033[01;31m$ret\033[00;00m"; fi; history -a'
+declare -x PROMPT_COMMAND='ret=$?; if [ $ret -ne 0 ] ; then echo -e "\007returned \033[01;31m$ret\033[00;00m"; fi; history -a; PS1="$(~/src/promptprint/promptprint)"'
 
 declare -x HISTFILE=~/.bash_history
 declare -x HISTCONTROL=ignoreboth:erasedups
@@ -306,7 +306,7 @@ function parse_git_branch {
     printf ' ('
 
     # Doesn't handle branches that have '...' in them, but I'm too lazy to improve the regex to check for / and stuff
-    printf "$STATUS" | head -n 1 | sed -E 's,^## ([^\.]*)(\.\.\.[^ ]+)?(.*),\1\3,' |  tr -d '\n'
+    printf "$STATUS" | head -n 1 | sed -E 's,^## ([^\.]*)(\.\.\.[^ ]+)?([^\n]*),\1\3,' |  tr -d '\n'
 
     # If there's multiple lines it means there's a diff
     if (( $(grep -c . <<<"$STATUS") > 1 )); then
@@ -317,12 +317,14 @@ function parse_git_branch {
 
 
 export ELIDED_PATH='$(echo -n "${PWD/#$HOME/\~}" | awk -F "/" '"'"'{
-if (length($0) > 50) { if (NF>4) print $1 "/" $2 "/.../" $(NF-1) "/" $NF;
-else if (NF>3) print $1 "/" $2 "/.../" $NF;
-else print $1 "/.../" $NF; }
-else print $0;}'"'"')'
+if (length($0) > 50) {
+    if (NF>4) print $1 "/" $2 "/.../" $(NF-1) "/" $NF;
+    else if (NF>3) print $1 "/" $2 "/.../" $NF;
+    else print $1 "/.../" $NF;
+} else print $0;
+}'"'"')'
 
-PS1="${rgb_gray}${rgb_gray}[\t] \h${rgb_usr}: ${rgb_std}${ELIDED_PATH}/${rgb_cadet}\$(parse_git_branch)${rgb_restore} "
+PS1="$(~/src/promptprint/promptprint)"
 
 unset   rgb_restore   \
         rgb_black     \

@@ -1,6 +1,13 @@
-#!/bin/sh -xe
+#!/bin/sh -e
 
 ## Install files
+
+if [[ ! -x ~/src/promptprint/promptprint ]]; then
+    echo "fix promptprint"
+    exit 1
+fi
+
+set -x
 
 # It's a folder, so clean it up manually first
 rm -rf ~/.Xresources.d
