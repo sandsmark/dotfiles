@@ -30,6 +30,9 @@ augroup END
 function s:LinuxConfigure()
     let l:path = "%:p"
     while expand(l:path) != "/"
+        if !isdirectory(expand(l:path))
+            return
+        endif
         let l:path = l:path . ":h"
         if filereadable(expand(l:path) . "/linuxstyle")
             call s:LinuxCodingStyle()
