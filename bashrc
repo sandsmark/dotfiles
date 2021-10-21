@@ -162,6 +162,19 @@ function cd    {
     fi
 }
 
+function viff    {
+    mapfile -t -n 2 < <(ff "$@")
+    if ((${#MAPFILE[@]}==0)); then
+        echo "No results"
+        return
+    fi
+    FILE="${MAPFILE[0]}"
+
+    echo "Open $FILE?"
+    read || return
+    /usr/bin/vim "$FILE"
+}
+
 function mkcd    { mkdir "$@" && builtin cd "$@"; }
 function fix-whiteboard { convert "$@" -morphology Convolve DoG:15,100,0 -negate -normalize -blur 0x1 -channel RBG -level 60%,91%,0.1 "$@.fixed.jpg"; }
 
