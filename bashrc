@@ -121,6 +121,8 @@ bind '\C-w:shell-backward-kill-word'
 
 # Make Alt+, select the first argument, matching Alt+. for selecting the last argument
 bind '"\e,":yank-nth-arg'
+bind '"\e[1;5D":shell-backward-word'
+bind '"\e[1;5C":shell-forward-word'
 
 # Alt + {1,2,3} to select argument {1,2,3}
 bind '"\e1":yank-nth-arg 1'
