@@ -138,7 +138,6 @@ bind '"\e3":yank-nth-arg 3'
 alias vi=vim
 alias ls='ls -C -h --color=auto'
 alias grep='grep --color=auto'
-alias feh='feh -.'
 alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
 alias ix="curl -n -F 'f:1=<-' http://ix.io"
 alias ip="ip -c"
