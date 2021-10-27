@@ -184,6 +184,7 @@ for_window [instance="kuickshow"] floating enable
 for_window [class="gwenview"] floating enable
 for_window [class="PhotoQt"] floating enable
 for_window [class="Display"] floating enable
+for_window [class="Display"] move position center
 for_window [class="Inkscape"] floating enable
 for_window [class="vsedit"] floating enable
 for_window [class="scpreader"] floating enable
