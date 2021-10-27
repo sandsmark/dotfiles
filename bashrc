@@ -36,8 +36,8 @@ declare -x BROWSER=chromium
 
 declare -x CCACHE_PATH="/usr/bin"
 declare -x GCC_COLORS=always
-declare -x CXXFLAGS=-fdiagnostics-color=always
-declare -x CFLAGS=-fdiagnostics-color=always
+declare -x CXXFLAGS="-fdiagnostics-color=always -mtune=native -march=native"
+declare -x CFLAGS="-fdiagnostics-color=always -mtune=native -march=native"
 
 # Unfortunately crashes a bunch of crappy applications, like Audacity
 # But better to be reminded about how crappy it is
